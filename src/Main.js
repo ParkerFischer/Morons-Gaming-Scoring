@@ -1,18 +1,11 @@
 import React from "react";
-import ReactDOM from "react-dom";
-import "./index.css";
-import App from "./App";
-import img from './img/morons-logo-gs.jpeg'
+import { Link } from "react-router-dom";
 
 function Main() {
   return (
     <>
-<div calssName='has-bg-img'>
- 
       <div className="d-flex justify-content-center">
-      
         <h1>Morons Gaming Co.</h1>
- 
       </div>
 
       <div className="d-flex justify-content-center">
@@ -20,14 +13,28 @@ function Main() {
       </div>
 
       <div className="d-flex justify-content-center">
-      <h2>Scoring pages</h2>
+        <h2>Scoring pages</h2>
       </div>
 
-      <div className="d-flex justify-content-center">
-      <button type="button" class="btn btn-primary btn-lg mx-2">Rebirth</button>
-      <button type="button" class="btn btn-primary btn-lg">Verdansk '84</button>
+      <div className="d-flex justify-content-around">
+        <button type="button" className="btn btn-primary btn-lg col-3 my-2">
+          Discord link
+        </button>
       </div>
-      <img class="bg-img" src={img} alt="logo"></img>
+
+      <div className="d-flex justify-content-around">
+        <div ClassName="col-2"></div>
+        <Link to="/reg" className="col-3">
+          <button type="button" className="btn btn-primary btn-lg ml-5">
+            Registration
+          </button>
+        </Link>
+        <Link to="/scoring" className="col-3">
+          <button type="button" className="btn btn-primary btn-lg ml-2">
+            Submit Scores
+          </button>
+        </Link>
+        <div ClassName="col-2"></div>
       </div>
     </>
   );
