@@ -12,12 +12,18 @@ export default function ScoringTeamSetFormRebirth({
   player2,
   player3,
   player4,
+  isDisabled,
 }) {
+  
+
+
   const handleTeamNameChange = (event) => setTeamName(event.target.value);
   const handlePlayer1NameChange = (event) => setPlayer1(event.target.value);
   const handlePlayer2NameChange = (event) => setPlayer2(event.target.value);
   const handlePlayer3NameChange = (event) => setPlayer3(event.target.value);
   const handlePlayer4NameChange = (event) => setPlayer4(event.target.value);
+ 
+
 
   return (
     <div className="border">
@@ -34,6 +40,7 @@ export default function ScoringTeamSetFormRebirth({
               onChange={handleTeamNameChange}
               value={teamName}
               placeholder=" Enter Team Name"
+              disabled={isDisabled}
             />
           </label>
 
@@ -48,6 +55,7 @@ export default function ScoringTeamSetFormRebirth({
               onChange={handlePlayer1NameChange}
               value={player1}
               placeholder="Enter Player Name"
+              disabled={isDisabled}
             />
           </label>
 
@@ -62,6 +70,7 @@ export default function ScoringTeamSetFormRebirth({
               onChange={handlePlayer2NameChange}
               value={player2}
               placeholder="Enter Player Name"
+              disabled={isDisabled}
             />
           </label>
 
@@ -76,6 +85,7 @@ export default function ScoringTeamSetFormRebirth({
               onChange={handlePlayer3NameChange}
               value={player3}
               placeholder="Enter Player Name"
+              disabled={isDisabled}
             />
           </label>
 
@@ -90,6 +100,7 @@ export default function ScoringTeamSetFormRebirth({
               onChange={handlePlayer4NameChange}
               value={player4}
               placeholder="Enter Player Name"
+              disabled={isDisabled}
             />
           </label>
         </form>
