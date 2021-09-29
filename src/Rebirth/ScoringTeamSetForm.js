@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
-export default function ScoringTeamSetFormRebirth({
+export default function ScoringTeamSetForm({
   setTeamName,
   setPlayer1,
   setPlayer2,
@@ -13,6 +13,8 @@ export default function ScoringTeamSetFormRebirth({
   player3,
   player4,
   isDisabled,
+  handicap,
+  setHandicap
 }) {
   
 
@@ -22,6 +24,7 @@ export default function ScoringTeamSetFormRebirth({
   const handlePlayer2NameChange = (event) => setPlayer2(event.target.value);
   const handlePlayer3NameChange = (event) => setPlayer3(event.target.value);
   const handlePlayer4NameChange = (event) => setPlayer4(event.target.value);
+  const handleHandicapChange = (event) => setHandicap(event.target.value);
  
 
 
@@ -33,7 +36,7 @@ export default function ScoringTeamSetFormRebirth({
             Team Name
             <input
               className="form-control"
-              size="20"
+              size="15"
               id="name"
               type="text"
               name="teamName"
@@ -48,7 +51,7 @@ export default function ScoringTeamSetFormRebirth({
             Player 1 Name
             <input
               className="form-control"
-              size="20"
+              size="15"
               id="name"
               type="text"
               name="player1"
@@ -63,7 +66,7 @@ export default function ScoringTeamSetFormRebirth({
             Player 2 Name
             <input
               className="form-control"
-              size="20"
+              size="15"
               id="name"
               type="text"
               name="player2"
@@ -78,7 +81,7 @@ export default function ScoringTeamSetFormRebirth({
             Player 3 Name
             <input
               className="form-control"
-              size="20"
+              size="15"
               id="name"
               type="text"
               name="player3"
@@ -93,13 +96,28 @@ export default function ScoringTeamSetFormRebirth({
             Player 4 Name
             <input
               className="form-control"
-              size="20"
+              size="15"
               id="name"
               type="text"
               name="player4"
               onChange={handlePlayer4NameChange}
               value={player4}
               placeholder="Enter Player Name"
+              disabled={isDisabled}
+            />
+          </label>
+
+          <label htmlFor="handicap" className="form-label ml-3">
+            Team Handicap
+            <input
+              className="form-control"
+              size="15"
+              id="name"
+              type="text"
+              name="handicap"
+              onChange={handleHandicapChange}
+              value={handicap}
+              placeholder="Enter as a negative '-13'"
               disabled={isDisabled}
             />
           </label>

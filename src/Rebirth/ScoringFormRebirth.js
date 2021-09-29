@@ -10,23 +10,23 @@ export default function ScoringFormRebirth({ teamName,
     setGames,
 games}){
 
- const [player1Kills, setPlayer1Kills] = useState()
- const [player2Kills, setPlayer2Kills] = useState()
- const [player3Kills, setPlayer3Kills] = useState()
- const [player4Kills, setPlayer4Kills] = useState()
- const [startTime, setStartTime] = useState()
- const [placement, setPlacement] = useState()
+ const [player1Kills, setPlayer1Kills] = useState('')
+ const [player2Kills, setPlayer2Kills] = useState('')
+ const [player3Kills, setPlayer3Kills] = useState('')
+ const [player4Kills, setPlayer4Kills] = useState('')
+ const [startTime, setStartTime] = useState('')
+ const [placement, setPlacement] = useState('')
 
  let placePoints = 0
 if(parseInt(placement) === 5 || parseInt(placement) === 4){placePoints = 5} 
 else if(parseInt(placement) === 3 || parseInt(placement) === 2){placePoints = 7} 
-else if(parseInt(placement) === 1) {placePoints =10};
+else if(parseInt(placement) === 1) {placePoints = 10};
 
 const totalKills = parseInt(player1Kills)+parseInt(player2Kills)+parseInt(player3Kills)+parseInt(player4Kills)
- const score = totalKills+parseInt(placePoints)
+ const score = parseInt(totalKills)+parseInt(placePoints)
  const newGame = {
-     placement,
-     placePoints,
+  placement,
+  placePoints,
   score,
   player1,
   player2,

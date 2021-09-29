@@ -1,8 +1,8 @@
 import React, {useState} from "react";
 import { Link } from "react-router-dom";
 import Verdansk from "./Verdansk";
-import Rebirth from "./Rebirth";
-import ScoringTeamSetFormRebirth from './ScoringTeamSetFormRebirth'
+import Rebirth from "./Rebirth/Rebirth.js";
+import ScoringTeamSetForm from './Rebirth/ScoringTeamSetForm'
 
 export default function ScoringHeader() {
   const [teamName, setTeamName] = useState("");
@@ -10,6 +10,7 @@ export default function ScoringHeader() {
   const [player2, setPlayer2] = useState("");
   const [player3, setPlayer3] = useState("");
   const [player4, setPlayer4] = useState("");
+  const [handicap, setHandicap] = useState("")
   const [pageState, setPageState] = useState(true)
 const [initialLoad, setInitialLoad] = useState(false)
 const [isDisabled, setIsDisabled] = useState(false)
@@ -17,7 +18,9 @@ const [isDisabled, setIsDisabled] = useState(false)
 
 
   let scoreSheet = (pageState === true)? 
-  <Rebirth   teamName={teamName}
+  <Rebirth   
+  handicap={handicap}
+  teamName={teamName}
   player1={player1}
   player2={player2}
   player3={player3}
@@ -44,7 +47,7 @@ function handleClickR(e){
         <h1>Scoring Header</h1>
       </div>
 
-      <ScoringTeamSetFormRebirth
+      <ScoringTeamSetForm
         teamName={teamName}
         player1={player1}
         player2={player2}
@@ -56,6 +59,8 @@ function handleClickR(e){
         setPlayer3={setPlayer3}
         setPlayer4={setPlayer4}
         isDisabled={isDisabled}
+        handicap={handicap}
+        setHandicap={setHandicap}
       />
 
 
