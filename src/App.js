@@ -5,12 +5,13 @@ import Main from "./Main";
 import NotFound from "./NotFound";
 import Registration from "./Registration";
 import ScoringHeader from "./ScoringHeader";
+import "./Main.css";
 
 //main switch and router
 function App() {
   return (
     <>
-      <div className="container-fluid">
+      <div className="container-fluid bg-dark px-0">
         <Router>
           <Switch>
             <Route exact path="/">

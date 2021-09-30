@@ -77,12 +77,16 @@ export default function ScoringFormRebirth({
 
   return (
     <div className="container">
-      <form onSubmit={handleFormSubmit}>
-        <div className="row">
-          <label htmlFor="player1 kills" className="form-label ml-3">
+      <div className='d-flex justify-content-around my-3'>
+      
+      <form onSubmit={handleFormSubmit} className="d-flex justify-content-around flex-wrap">
+        
+        <div className="d-flex justify-content-around my-3">
+          <div className="d-flex justify-content-around flex-wrap">
+          <label htmlFor="player1 kills" className="form-label mx-2 text-light text-center">
             {`${player1}`}
             <input
-              className=""
+              className="form-control text-center"
               size="5"
               id="player1 Kills"
               type="text"
@@ -92,10 +96,10 @@ export default function ScoringFormRebirth({
               placeholder="Kills"
             />
           </label>
-          <label htmlFor="player2 kills" className="form-label ml-3">
+          <label htmlFor="player2 kills" className="form-label mx-2 text-light text-center">
             {`${player2}`}
             <input
-              className=""
+              className="form-control text-center"
               size="5"
               id="player2 Kills"
               type="text"
@@ -105,10 +109,10 @@ export default function ScoringFormRebirth({
               placeholder="Kills"
             />
           </label>
-          <label htmlFor="player3 kills" className="form-label ml-3">
+          <label htmlFor="player3 kills" className="form-label mx-2 text-light text-center">
             {`${player3}`}
             <input
-              className=""
+              className="form-control text-center"
               size="5"
               id="player3 Kills"
               type="text"
@@ -118,10 +122,10 @@ export default function ScoringFormRebirth({
               placeholder="Kills"
             />
           </label>
-          <label htmlFor="player4 kills" className="form-label ml-3">
+          <label htmlFor="player4 kills" className="form-label mx-2 text-light text-center ">
             {`${player4}`}
             <input
-              className=""
+              className="form-control text-center"
               size="5"
               id="player4 Kills"
               type="text"
@@ -132,11 +136,14 @@ export default function ScoringFormRebirth({
             />
           </label>
         </div>
+        </div>
+        
+
         <div className="row">
-          <label htmlFor="Placement" className="form-label ml-3">
+          <label htmlFor="Placement" className="form-label ml-3 text-light">
             {`Match Placement`}
             <input
-              className=""
+              className="form-control text-center"
               size="5"
               id="Placement"
               type="text"
@@ -146,10 +153,10 @@ export default function ScoringFormRebirth({
               placeholder="dub?"
             />
           </label>
-          <label htmlFor="startTime" className="form-label ml-3">
+          <label htmlFor="startTime" className="form-label ml-3 text-light">
             {`Match Start Time`}
             <input
-              className=""
+              className="form-control text-center"
               size="5"
               id="startTime"
               type="text"
@@ -167,6 +174,7 @@ export default function ScoringFormRebirth({
           </button>
         </div>
       </form>
+     </div>
     </div>
   );
 }

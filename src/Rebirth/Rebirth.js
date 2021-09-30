@@ -19,14 +19,7 @@ export default function Rebirth({
 
   return (
     <>
-      <ScoringFormRebirth
-        player1={player1}
-        player2={player2}
-        player3={player3}
-        player4={player4}
-        games={games}
-        setGames={setGames}
-      />
+    
       <ScoredGamesRebirth
         handicap={handicap}
         teamName={teamName}
@@ -35,8 +28,21 @@ export default function Rebirth({
         player3={player3}
         player4={player4}
         games={games}
-      />
+      /> 
+      <div className='row'>
+      <div className='col-6'>
+      <ScoringFormRebirth
+        player1={player1}
+        player2={player2}
+        player3={player3}
+        player4={player4}
+        games={games}
+        setGames={setGames}
+      /></div>
+      <div className='col-6'>
       {listedGames}
+      </div>
+      </div>
     </>
   );
 }

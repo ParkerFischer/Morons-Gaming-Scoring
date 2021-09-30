@@ -81,32 +81,57 @@ export default function ScoredGamesRebirth({
   //this is the body of the display
   return (
     <>
-      <div className="row">
-        <div className="border col-6">
-          <p>{`Points Scored: ${totalScore} (Total points minus handicap ${getTotal(
+    <div className="row my-4 d-flex justify-content-around text-light mx-0 text-center align-text-center">
+      <div className=" col-4 d-flex justify-content-around scorebox pt-3 pb-2">
+        <div className="col">
+      <div className='row justify-content-center'>
+          <h4 className="font-weight-bold mr-2"> Points Scored:</h4> 
+          <h4 className="font-weight-normal">{`${totalScore}`}</h4>
+          <p>{`(Total points minus handicap ${getTotal(
             "score",
             topFourGames
           )}${handicap})`}</p>
-          <p>{`Kill Points: ${totalKillPoints}`} </p>
-          <p>{`Placement Points: ${getTotal("placePoints", topFourGames)}`}</p>
+      </div>
+      <div className='row justify-content-center'>
+          <h4 className="font-weight-bold mr-2">Kill Points: </h4> 
+          <h4 className="font-weight-normal">{`${totalKillPoints}`} </h4>
+         </div>
+        
+      <div className='row justify-content-center'>
+          <h4 className="font-weight-bold mr-2">Placement Points: </h4> <h4 className="font-weight-normal">{`${getTotal("placePoints", topFourGames)}`}</h4>
+          </div>
+      <div className='row justify-content-center'>
+        <h4 className="font-weight-bold mr-2">Highest single kill game:</h4>
           {topKillsGame.length === 1 && (
-            <p>{`Highest single kill game: ${topKillsGame[0].player} - ${topKillsGame[0].kills}`}</p>
+             <h4 className="font-weight-normal">{`${topKillsGame[0].player} - ${topKillsGame[0].kills}`}</h4>
           )}
         </div>
-        <div className="border col-6">
-          <p>{`${player1} Kills: ${getTotal(
-            "player1Kills",
-            topFourGames
-          )}  - ${(
-            (getTotal("player1Kills", topFourGames) /
+         </div>
+</div>
+
+        <div className="col-6 d-flex justify-content-around scorebox pt-3 pb-2">
+          
+          <div className='col-3'>
+          <p className='mb-1'>{`${player1}`}</p>
+          <p className='mb-1'>{`Kills: ${getTotal("player1Kills",topFourGames)}`} </p>
+          <p className='mb-1'>% of points in scored games</p>
+          <p className='mb-1'>{`${((getTotal("player1Kills", topFourGames) /
               (getTotal("score", topFourGames) -
                 getTotal("placePoints", topFourGames))) *
             100
-          ).toFixed()}% points in scored games - ${(
-            (getTotal("player1Kills", games) /
-              (getTotal("score", games) - getTotal("placePoints", games))) *
-            100
-          ).toFixed()}% points in all games`}</p>
+          ).toFixed()}%`}</p>
+
+         <p className='mb-1'> % of points in all games</p>
+          <p className='mb-1'>{`${((getTotal("player1Kills", games) /(getTotal("score", games) - getTotal("placePoints", games))) *100).toFixed()}%`}</p>
+          
+          </div>
+
+
+
+
+
+
+
           <p>{`${player2} Kills: ${getTotal(
             "player2Kills",
             topFourGames
@@ -148,7 +173,7 @@ export default function ScoredGamesRebirth({
           ).toFixed()}% points in all games`}</p>
         </div>
       </div>
-      <div className="row">
+      <div className="row text-light">
         <div className="border col d-flex">
           <div className="border col-3">
             <p>game 1 summary</p>
@@ -209,6 +234,7 @@ export default function ScoredGamesRebirth({
           Submit Team Score
         </button>
       </div>
+    
     </>
   );
 }

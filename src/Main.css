@@ -1,0 +1,45 @@
+
+.bg-dark{
+    background-color: black !important;
+}
+
+.bg-light{
+    background-color: white !important;
+
+}
+
+.btn-secondary,
+.btn-secondary:active,
+.btn-secondary:visited,
+.btn-secondary:focus {
+  background-color: rgb(103, 5, 133) !important;
+  border-color: rgb(103, 5, 133) !important;
+}
+.btn-secondary:hover{
+    background-color: rgba(103, 5, 133, 0.637) !important;
+}
+
+.btn-primary,
+.btn-primary:active,
+.btn-primary:visited,
+.btn-primary:focus {
+  background-color: #283618!important;
+  border-color: #283618!important;
+}
+.btn-primary:hover{
+    background-color:  #2836189a !important;
+    border-color: #283618!important;
+   
+}
+.scorebox{
+    border-radius: 25px;
+    background-color:  #BC6C25;
+}
+
+
+
+body {
+    height: 100%;
+    overflow: auto;
+    background-color: #000000;
+  }

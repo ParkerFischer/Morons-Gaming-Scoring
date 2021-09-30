@@ -52,8 +52,8 @@ export default function ScoringHeader() {
 
   return (
     <>
-      <div className="d-flex justify-content-center">
-        <h1>Scoring Header</h1>
+      <div className="d-flex justify-content-center text-center text-light my-5 mx-2">
+        <h2>Enter team info and Select Game Mode</h2>
       </div>
 
       <ScoringTeamSetForm
@@ -76,14 +76,14 @@ export default function ScoringHeader() {
         <div className="col-2"></div>
         <button
           type="button"
-          className="btn btn-primary btn-lg col-3"
+          className="btn btn-primary btn-lg col-4 mr-2"
           onClick={handleClickR}
         >
           Rebirth
         </button>
         <button
           type="button"
-          className="btn btn-primary btn-lg col-3"
+          className="btn btn-primary btn-lg col-4"
           onClick={handleClickV}
         >
           Verdansk '84'

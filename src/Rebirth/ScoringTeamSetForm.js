@@ -25,14 +25,14 @@ export default function ScoringTeamSetForm({
   const handleHandicapChange = (event) => setHandicap(event.target.value);
 
   return (
-    <div className="border">
-      <div className="container">
-        <form onSubmit={null}>
-          <label htmlFor="teamName" className="form-label ml-3">
-            Team Name
+    <div className="">
+      <div className="d-flex justify-content-around my-3">
+        <form className="d-flex justify-content-around flex-wrap">
+          <label htmlFor="teamName" className="form-label mx-2 text-light text-center">
+             Team Name
             <input
-              className="form-control"
-              size="15"
+              className="form-control text-center"
+              size="16"
               id="name"
               type="text"
               name="teamName"
@@ -43,77 +43,77 @@ export default function ScoringTeamSetForm({
             />
           </label>
 
-          <label htmlFor="player1" className="form-label ml-3">
-            Player 1 Name
+          <label htmlFor="player1" className="form-label mx-2 text-light text-center">
+            Player 1 Tag
             <input
-              className="form-control"
-              size="15"
+              className="form-control text-center"
+              size="16"
               id="name"
               type="text"
               name="player1"
               onChange={handlePlayer1NameChange}
               value={player1}
-              placeholder="Enter Player Name"
+              placeholder="Enter Player"
               disabled={isDisabled}
             />
           </label>
 
-          <label htmlFor="player2" className="form-label ml-3">
-            Player 2 Name
+          <label htmlFor="player2" className="form-label mx-2 text-light text-center">
+            Player 2 Tag
             <input
-              className="form-control"
-              size="15"
+              className="form-control text-center"
+              size="16"
               id="name"
               type="text"
               name="player2"
               onChange={handlePlayer2NameChange}
               value={player2}
-              placeholder="Enter Player Name"
+              placeholder="Enter Player"
               disabled={isDisabled}
             />
           </label>
 
-          <label htmlFor="player3" className="form-label ml-3">
-            Player 3 Name
+          <label htmlFor="player3" className="form-label mx-2 text-light text-center">
+            Player 3 Tag
             <input
-              className="form-control"
-              size="15"
+              className="form-control text-center"
+              size="16"
               id="name"
               type="text"
               name="player3"
               onChange={handlePlayer3NameChange}
               value={player3}
-              placeholder="Enter Player Name"
+              placeholder="Enter Player"
               disabled={isDisabled}
             />
           </label>
 
-          <label htmlFor="player4" className="form-label ml-3">
-            Player 4 Name
+          <label htmlFor="player4" className="form-label mx-2 text-light text-center">
+            Player 4 Tag
             <input
-              className="form-control"
-              size="15"
+              className="form-control text-center"
+              size="16"
               id="name"
               type="text"
               name="player4"
               onChange={handlePlayer4NameChange}
               value={player4}
-              placeholder="Enter Player Name"
+              placeholder="Enter Player"
               disabled={isDisabled}
             />
           </label>
 
-          <label htmlFor="handicap" className="form-label ml-3">
+          <label htmlFor="handicap" className="form-label mx-2 text-light text-center">
             Team Handicap
             <input
-              className="form-control"
-              size="15"
+              className="form-control text-center"
+              size="16"
               id="name"
               type="text"
               name="handicap"
               onChange={handleHandicapChange}
               value={handicap}
-              placeholder="Enter as a negative '-13'"
+              placeholder="I.E. '-13'"
               disabled={isDisabled}
             />
           </label>

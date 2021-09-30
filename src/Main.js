@@ -1,49 +1,75 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import img from './img/morons-logo-gs.jpeg'
+import './Main.css'
 
 //front page
 function Main() {
   return (
     <>
+    <div className="mb-5 bg-light d-flex justify-content-center">
+<img src={img} className="mb-5 d-flex justify-content-center" style={{width: '60%'}}></img>
+</div>
+   
+<div className='bg-dark'>
       <div className="row">
-        <div className="d-flex justify-content-center col-12">
-          <h1>Morons Gaming Co.</h1>
+        <div className="d-flex justify-content-center text-center col-12 text-light">
+          <h2>Welcome to Morons Gaming Co.</h2>
+          
         </div>
+      </div>
+      <div className="row">
+        <div className="d-flex justify-content-center col-12 text-light my-3">
+          <div className="d-flex justify-content-center text-center col-6 text-light">
+          <p>We are a group of people who love gaming, music, food and fun! 
+            We run tournaments weekly for bragging rights and cash! Jump on in and become a Moron! </p>
+        </div></div>
       </div>
 
-      <div className="row">
-        <div className="d-flex justify-content-center col-12">
-          <p>this is where we describe ourselves</p>
-        </div>
-      </div>
 
-      <div className="row">
-        <div className="d-flex justify-content-center col-12">
-          <h2>Scoring pages</h2>
-        </div>
-      </div>
+
+    
 
       <div className="row">
         <div className="d-flex justify-content-around col-12  ">
-          <button type="button" className="btn btn-primary btn-lg col-3 my-2">
-            Discord link
+          <div className="d-flex justify-content-around col-12">
+          <button type="button" className="btn btn-secondary btn-lg col-5 my-4 ">
+            Become a Moron!
           </button>
+          </div>
         </div>
       </div>
 
-      <div className="d-flex justify-content-around row">
-        <div className="col-3"></div>
-        <Link to="/reg" className="col-3">
-          <button type="button" className="btn btn-primary btn-lg">
-            Registration
+
+
+      <div className="row">
+        <div className="d-flex justify-content-around col-12  ">
+        <Link to="/reg" className=" d-flex justify-content-around col-12">
+          <button type="button" className="btn btn-primary col-5 btn-lg my-4">
+            Team Registration
           </button>
         </Link>
-        <Link to="/scoring" className="col-3">
-          <button type="button" className="btn btn-primary btn-lg">
+        </div>
+      </div>
+
+
+      <div className="row">
+        <div className="d-flex justify-content-around col-12  ">
+        <Link to="/scoring" className="d-flex justify-content-around col-12">
+          <button type="button" className="btn btn-primary col-5 btn-lg my-4">
             Submit Scores
           </button>
         </Link>
-        <div className="col-2"></div>
+        </div>
+        
+      </div>
+<div className='row'> <p className='mb-5'></p></div>
+
+
+
+
+
+   
       </div>
     </>
   );
