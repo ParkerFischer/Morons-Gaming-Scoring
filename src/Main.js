@@ -5,37 +5,45 @@ import { Link } from "react-router-dom";
 function Main() {
   return (
     <>
-      <div className="d-flex justify-content-center">
-        <h1>Morons Gaming Co.</h1>
+      <div className="row">
+        <div className="d-flex justify-content-center col-12">
+          <h1>Morons Gaming Co.</h1>
+        </div>
       </div>
 
-      <div className="d-flex justify-content-center">
-        <p>this is where we describe ourselves</p>
+      <div className="row">
+        <div className="d-flex justify-content-center col-12">
+          <p>this is where we describe ourselves</p>
+        </div>
       </div>
 
-      <div className="d-flex justify-content-center">
-        <h2>Scoring pages</h2>
+      <div className="row">
+        <div className="d-flex justify-content-center col-12">
+          <h2>Scoring pages</h2>
+        </div>
       </div>
 
-      <div className="d-flex justify-content-around">
-        <button type="button" className="btn btn-primary btn-lg col-3 my-2">
-          Discord link
-        </button>
+      <div className="row">
+        <div className="d-flex justify-content-around col-12  ">
+          <button type="button" className="btn btn-primary btn-lg col-3 my-2">
+            Discord link
+          </button>
+        </div>
       </div>
 
-      <div className="d-flex justify-content-around">
-        <div ClassName="col-2"></div>
+      <div className="d-flex justify-content-around row">
+        <div className="col-3"></div>
         <Link to="/reg" className="col-3">
-          <button type="button" className="btn btn-primary btn-lg ml-5">
+          <button type="button" className="btn btn-primary btn-lg">
             Registration
           </button>
         </Link>
         <Link to="/scoring" className="col-3">
-          <button type="button" className="btn btn-primary btn-lg ml-2">
+          <button type="button" className="btn btn-primary btn-lg">
             Submit Scores
           </button>
         </Link>
-        <div ClassName="col-2"></div>
+        <div className="col-2"></div>
       </div>
     </>
   );
