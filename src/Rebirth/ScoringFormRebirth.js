@@ -1,64 +1,79 @@
-import React, {useState} from "react";
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
 
-
-export default function ScoringFormRebirth({ teamName,
-    player1,
-    player2,
-    player3,
-    player4,
-    setGames,
-games}){
-
- const [player1Kills, setPlayer1Kills] = useState('')
- const [player2Kills, setPlayer2Kills] = useState('')
- const [player3Kills, setPlayer3Kills] = useState('')
- const [player4Kills, setPlayer4Kills] = useState('')
- const [startTime, setStartTime] = useState('')
- const [placement, setPlacement] = useState('')
-
- let placePoints = 0
-if(parseInt(placement) === 5 || parseInt(placement) === 4){placePoints = 5} 
-else if(parseInt(placement) === 3 || parseInt(placement) === 2){placePoints = 7} 
-else if(parseInt(placement) === 1) {placePoints = 10};
-
-const totalKills = parseInt(player1Kills)+parseInt(player2Kills)+parseInt(player3Kills)+parseInt(player4Kills)
- const score = parseInt(totalKills)+parseInt(placePoints)
- const newGame = {
-  placement,
-  placePoints,
-  score,
+//this is the form for entering the results of each game.
+export default function ScoringFormRebirth({
   player1,
   player2,
   player3,
   player4,
-  player1Kills,
-  player2Kills,
-  player3Kills,
-  player4Kills,
-  startTime
- }
+  setGames,
+  games,
+}) {
+  //these states hold the kills for each player, the start time fo teh match and the matches placement.
+  const [player1Kills, setPlayer1Kills] = useState("");
+  const [player2Kills, setPlayer2Kills] = useState("");
+  const [player3Kills, setPlayer3Kills] = useState("");
+  const [player4Kills, setPlayer4Kills] = useState("");
+  const [startTime, setStartTime] = useState("");
+  const [placement, setPlacement] = useState("");
 
- const handlePlayer1KillChange = (event) => setPlayer1Kills(event.target.value);
- const handlePlayer2KillChange = (event) => setPlayer2Kills(event.target.value);
- const handlePlayer3KillChange = (event) => setPlayer3Kills(event.target.value);
- const handlePlayer4KillChange = (event) => setPlayer4Kills(event.target.value);
- const handleStartTimeChange = (event) => setStartTime(event.target.value);
- const handleplacementChange = (event) => setPlacement(event.target.value);
+  //this is the scoring mechanism for the placment method
+  let placePoints = 0;
+  if (parseInt(placement) === 5 || parseInt(placement) === 4) {
+    placePoints = 5;
+  } else if (parseInt(placement) === 3 || parseInt(placement) === 2) {
+    placePoints = 7;
+  } else if (parseInt(placement) === 1) {
+    placePoints = 10;
+  }
 
+  //this is a variable that holds all the kills for the entire team.
+  const totalKills =
+    parseInt(player1Kills) +
+    parseInt(player2Kills) +
+    parseInt(player3Kills) +
+    parseInt(player4Kills);
+  //this is used to calculate the score for the game.
+  const score = parseInt(totalKills) + parseInt(placePoints);
+  //this is the object that is created with each new game played.
+  const newGame = {
+    placement,
+    placePoints,
+    score,
+    player1,
+    player2,
+    player3,
+    player4,
+    player1Kills,
+    player2Kills,
+    player3Kills,
+    player4Kills,
+    startTime,
+  };
 
-function handleFormSubmit(e){
-    e.preventDefault()
-    setGames([...games, newGame])
-    setPlayer1Kills('')
-    setPlayer2Kills('')
-    setPlayer3Kills('')
-    setPlayer4Kills('')
-    setStartTime('')
-    setPlacement('')
-}
+  //these are handlers for the text input fields on the form for game submission.
+  const handlePlayer1KillChange = (event) =>
+    setPlayer1Kills(event.target.value);
+  const handlePlayer2KillChange = (event) =>
+    setPlayer2Kills(event.target.value);
+  const handlePlayer3KillChange = (event) =>
+    setPlayer3Kills(event.target.value);
+  const handlePlayer4KillChange = (event) =>
+    setPlayer4Kills(event.target.value);
+  const handleStartTimeChange = (event) => setStartTime(event.target.value);
+  const handleplacementChange = (event) => setPlacement(event.target.value);
 
-
+  //this is handles when you submit a form.
+  function handleFormSubmit(e) {
+    e.preventDefault();
+    setGames([...games, newGame]);
+    setPlayer1Kills("");
+    setPlayer2Kills("");
+    setPlayer3Kills("");
+    setPlayer4Kills("");
+    setStartTime("");
+    setPlacement("");
+  }
 
   return (
     <div className="container">
@@ -115,8 +130,9 @@ function handleFormSubmit(e){
               value={player4Kills}
               placeholder="Kills"
             />
-          </label></div>
-          <div className='row'>
+          </label>
+        </div>
+        <div className="row">
           <label htmlFor="Placement" className="form-label ml-3">
             {`Match Placement`}
             <input
@@ -143,17 +159,14 @@ function handleFormSubmit(e){
               placeholder="Time?"
             />
           </label>
-          </div>
-          
-          <div className='row'>
+        </div>
+
+        <div className="row">
           <button type="submit" className="btn btn-primary ml-2">
             Submit Game
           </button>
-          </div>
-        
-        </form>
+        </div>
+      </form>
     </div>
-
   );
 }
-

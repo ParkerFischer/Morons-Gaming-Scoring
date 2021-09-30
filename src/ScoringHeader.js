@@ -1,47 +1,56 @@
-import React, {useState} from "react";
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
 import Verdansk from "./Verdansk";
 import Rebirth from "./Rebirth/Rebirth.js";
-import ScoringTeamSetForm from './Rebirth/ScoringTeamSetForm'
+import ScoringTeamSetForm from "./Rebirth/ScoringTeamSetForm";
 
+//this is the header that will display when you go to the main scoring page. it also holds the states.
 export default function ScoringHeader() {
+  //these are used to set the players and teams names to be used later
   const [teamName, setTeamName] = useState("");
   const [player1, setPlayer1] = useState("");
   const [player2, setPlayer2] = useState("");
   const [player3, setPlayer3] = useState("");
   const [player4, setPlayer4] = useState("");
-  const [handicap, setHandicap] = useState("")
-  const [pageState, setPageState] = useState(true)
-const [initialLoad, setInitialLoad] = useState(false)
-const [isDisabled, setIsDisabled] = useState(false)
+  //this is the negative number of points if a team si over the KD cap
+  const [handicap, setHandicap] = useState("");
+  //this is used to determine if verdansk scoresheet or rebirth scoresheet will load
+  const [pageState, setPageState] = useState(true);
+  //this is used to prevent the full page from rendering until you enter your team
+  const [initialLoad, setInitialLoad] = useState(false);
+  //this is used to disable the text fields for the team once entered.
+  const [isDisabled, setIsDisabled] = useState(false);
 
+  //this determines if the verdansk sheet or the rebirth sheet is shown.
+  let scoreSheet =
+    pageState === true ? (
+      <Rebirth
+        handicap={handicap}
+        teamName={teamName}
+        player1={player1}
+        player2={player2}
+        player3={player3}
+        player4={player4}
+      />
+    ) : (
+      <Verdansk />
+    );
 
+  //this handles the click for Verdansk
+  function handleClickV(e) {
+    e.preventDefault();
+    setInitialLoad(true);
+    setIsDisabled(true);
+    return setPageState(false);
+  }
+  //this handles the click for rebirth
+  function handleClickR(e) {
+    e.preventDefault();
+    setInitialLoad(true);
+    setIsDisabled(true);
+    return setPageState(true);
+  }
 
-  let scoreSheet = (pageState === true)? 
-  <Rebirth   
-  handicap={handicap}
-  teamName={teamName}
-  player1={player1}
-  player2={player2}
-  player3={player3}
-  player4={player4}/> : <Verdansk/>
-
-function handleClickV(e){
-    e.preventDefault()
-    setInitialLoad(true)
-    setIsDisabled(true)
-    return setPageState(false)
-}
-
-function handleClickR(e){
-    e.preventDefault()
-    setInitialLoad(true)
-    setIsDisabled(true)
-    return setPageState(true)
-}
-  
-  
-    return (
+  return (
     <>
       <div className="d-flex justify-content-center">
         <h1>Scoring Header</h1>
@@ -63,23 +72,26 @@ function handleClickR(e){
         setHandicap={setHandicap}
       />
 
-
-
-
-
-
       <div className="d-flex justify-content-around">
         <div ClassName="col-2"></div>
-          <button type="button" className="btn btn-primary btn-lg col-3" onClick={handleClickR}>
-            Rebirth
-          </button>
-          <button type="button" className="btn btn-primary btn-lg col-3" onClick={handleClickV}>
-            Verdansk '84'
-          </button>
+        <button
+          type="button"
+          className="btn btn-primary btn-lg col-3"
+          onClick={handleClickR}
+        >
+          Rebirth
+        </button>
+        <button
+          type="button"
+          className="btn btn-primary btn-lg col-3"
+          onClick={handleClickV}
+        >
+          Verdansk '84'
+        </button>
         <div ClassName="col-2"></div>
       </div>
 
-    {initialLoad && scoreSheet}
+      {initialLoad && scoreSheet}
     </>
   );
 }

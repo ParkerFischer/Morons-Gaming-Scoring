@@ -1,6 +1,6 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React from "react";
 
+//this handles the form for filling out the team info.
 export default function ScoringTeamSetForm({
   setTeamName,
   setPlayer1,
@@ -14,19 +14,15 @@ export default function ScoringTeamSetForm({
   player4,
   isDisabled,
   handicap,
-  setHandicap
+  setHandicap,
 }) {
-  
-
-
+  //these are used to handle the text input fields.
   const handleTeamNameChange = (event) => setTeamName(event.target.value);
   const handlePlayer1NameChange = (event) => setPlayer1(event.target.value);
   const handlePlayer2NameChange = (event) => setPlayer2(event.target.value);
   const handlePlayer3NameChange = (event) => setPlayer3(event.target.value);
   const handlePlayer4NameChange = (event) => setPlayer4(event.target.value);
   const handleHandicapChange = (event) => setHandicap(event.target.value);
- 
-
 
   return (
     <div className="border">

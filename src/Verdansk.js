@@ -1,6 +1,6 @@
 import React, {useState} from "react";
-import { Link } from "react-router-dom";
 
+//this is the main page that inially loads when you click rebirth
 export default function Verdansk() {
 return <h2>Verdansk Scoring</h2>
 }

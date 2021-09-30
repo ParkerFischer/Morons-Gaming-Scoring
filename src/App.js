@@ -1,13 +1,12 @@
 import React from "react";
-import ReactDOM from "react-dom";
 import { BrowserRouter as Router } from "react-router-dom";
 import { Route, Switch } from "react-router-dom";
-
 import Main from "./Main";
 import NotFound from "./NotFound";
 import Registration from "./Registration";
 import ScoringHeader from "./ScoringHeader";
 
+//main switch and router
 function App() {
   return (
     <>
