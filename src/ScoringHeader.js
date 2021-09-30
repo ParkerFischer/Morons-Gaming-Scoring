@@ -73,7 +73,7 @@ export default function ScoringHeader() {
       />
 
       <div className="d-flex justify-content-around">
-        <div ClassName="col-2"></div>
+        <div className="col-2"></div>
         <button
           type="button"
           className="btn btn-primary btn-lg col-3"
@@ -88,7 +88,7 @@ export default function ScoringHeader() {
         >
           Verdansk '84'
         </button>
-        <div ClassName="col-2"></div>
+        <div className="col-2"></div>
       </div>
 
       {initialLoad && scoreSheet}
