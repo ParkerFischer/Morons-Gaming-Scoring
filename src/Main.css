@@ -33,8 +33,13 @@
 	background-color: #bc6c25;
 }
 
+
 body {
 	height: 100%;
 	overflow: auto;
 	background-color: #000000;
 }
+
+@media only screen and (min-width: 600px) {
+
+  }

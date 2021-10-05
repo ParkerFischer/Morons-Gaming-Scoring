@@ -52,11 +52,11 @@ export default function Registration() {
 
 	return (
 		<>
-			<div className="d-flex justify-content-center">
+			<div className="d-flex justify-content-center text-light">
 				<h1>Register Your Team!</h1>
 			</div>
 
-			<form className="registration m-5" onSubmit={submitHandler}>
+			<form className="registration m-5 text-light" onSubmit={submitHandler}>
 				<fieldset>
 					<div className="row">
 						<div className="col">

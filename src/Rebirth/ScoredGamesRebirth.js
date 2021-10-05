@@ -82,7 +82,7 @@ export default function ScoredGamesRebirth({
   return (
     <>
     <div className="row my-4 d-flex justify-content-around text-light mx-0 text-center align-text-center">
-      <div className=" col-4 d-flex justify-content-around scorebox pt-3 pb-2">
+      <div className=" col-5 d-flex justify-content-around scorebox pt-3 pb-2">
         <div className="col">
       <div className='row justify-content-center'>
           <h4 className="font-weight-bold mr-2"> Points Scored:</h4> 
@@ -112,7 +112,7 @@ export default function ScoredGamesRebirth({
         <div className="col-6 d-flex justify-content-around scorebox pt-3 pb-2">
           
           <div className='col-3'>
-          <p className='mb-1'>{`${player1}`}</p>
+          <h4 className='mb-1'>{`${player1}`}</h4>
           <p className='mb-1'>{`Kills: ${getTotal("player1Kills",topFourGames)}`} </p>
           <p className='mb-1'>% of points in scored games</p>
           <p className='mb-1'>{`${((getTotal("player1Kills", topFourGames) /
@@ -126,53 +126,59 @@ export default function ScoredGamesRebirth({
           
           </div>
 
-
-
-
-
-
-
-          <p>{`${player2} Kills: ${getTotal(
-            "player2Kills",
-            topFourGames
-          )}  - ${(
-            (getTotal("player2Kills", topFourGames) /
+          <div className='col-3'>
+          <h4 className='mb-1'>{`${player2}`}</h4>
+          <p className='mb-1'>{`Kills: ${getTotal("player2Kills",topFourGames)}`} </p>
+          <p className='mb-1'>% of points in scored games</p>
+          <p className='mb-1'>{`${((getTotal("player2Kills", topFourGames) /
               (getTotal("score", topFourGames) -
                 getTotal("placePoints", topFourGames))) *
             100
-          ).toFixed()}% points in scored games - ${(
-            (getTotal("player2Kills", games) /
-              (getTotal("score", games) - getTotal("placePoints", games))) *
-            100
-          ).toFixed()}% points in all games`}</p>
-          <p>{`${player3} Kills: ${getTotal(
-            "player3Kills",
-            topFourGames
-          )}  - ${(
-            (getTotal("player3Kills", topFourGames) /
+          ).toFixed()}%`}</p>
+
+         <p className='mb-1'> % of points in all games</p>
+          <p className='mb-1'>{`${((getTotal("player2Kills", games) /(getTotal("score", games) - getTotal("placePoints", games))) *100).toFixed()}%`}</p>
+          
+          </div>
+
+
+          <div className='col-3'>
+          <h4 className='mb-1'>{`${player3}`}</h4>
+          <p className='mb-1'>{`Kills: ${getTotal("player3Kills",topFourGames)}`} </p>
+          <p className='mb-1'>% of points in scored games</p>
+          <p className='mb-1'>{`${((getTotal("player3Kills", topFourGames) /
               (getTotal("score", topFourGames) -
                 getTotal("placePoints", topFourGames))) *
             100
-          ).toFixed()}% points in scored games - ${(
-            (getTotal("player3Kills", games) /
-              (getTotal("score", games) - getTotal("placePoints", games))) *
-            100
-          ).toFixed()}% points in all games`}</p>
-          <p>{`${player4} Kills: ${getTotal(
-            "player4Kills",
-            topFourGames
-          )}  - ${(
-            (getTotal("player4Kills", topFourGames) /
+          ).toFixed()}%`}</p>
+
+         <p className='mb-1'> % of points in all games</p>
+          <p className='mb-1'>{`${((getTotal("player3Kills", games) /(getTotal("score", games) - getTotal("placePoints", games))) *100).toFixed()}%`}</p>
+          
+          </div>
+
+
+          <div className='col-3'>
+          <h4 className='mb-1'>{`${player4}`}</h4>
+          <p className='mb-1'>{`Kills: ${getTotal("player4Kills",topFourGames)}`} </p>
+          <p className='mb-1'>% of points in scored games</p>
+          <p className='mb-1'>{`${((getTotal("player4Kills", topFourGames) /
               (getTotal("score", topFourGames) -
                 getTotal("placePoints", topFourGames))) *
             100
-          ).toFixed()}% points in scored games - ${(
-            (getTotal("player4Kills", games) /
-              (getTotal("score", games) - getTotal("placePoints", games))) *
-            100
-          ).toFixed()}% points in all games`}</p>
+          ).toFixed()}%`}</p>
+
+         <p className='mb-1'> % of points in all games</p>
+          <p className='mb-1'>{`${((getTotal("player4Kills", games) /(getTotal("score", games) - getTotal("placePoints", games))) *100).toFixed()}%`}</p>
+          
+          </div>
+ 
         </div>
+
       </div>
+
+
+
       <div className="row text-light">
         <div className="border col d-flex">
           <div className="border col-3">
