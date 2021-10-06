@@ -7,7 +7,8 @@ import "./Main.css";
 function Main() {
 	return (
 		<>
-			<div className="mb-5 bg-light d-flex justify-content-center">
+		<div className='container-fluid px-0'>
+			<div className="px-0 mb-5 bg-light d-flex justify-content-center">
 				<img
 					src={img}
 					className="mb-5 d-flex justify-content-center"
@@ -17,14 +18,14 @@ function Main() {
 
 			<div className="bg-dark">
 				<div className="row">
-					<div className="d-flex justify-content-center text-center col-12 text-light">
-						<h2>Welcome to Morons Gaming Co.</h2>
+					<div className="d-flex justify-content-center text-center col text-lightpx-0">
+						<h2 className='px-0 mx-2 text-light'>Welcome to Morons Gaming Co.</h2>
 					</div>
 				</div>
 				<div className="row">
-					<div className="d-flex justify-content-center col-12 text-light my-3">
-						<div className="d-flex justify-content-center text-center col-6 text-light">
-							<p>
+					<div className="d-flex justify-content-center col text-light my-3 px-0">
+						<div className="d-flex justify-content-center text-center col-6 text-light px-0">
+							<p className='px-0'>
 								We are a group of people who love gaming, music, food and fun!
 								We run tournaments weekly for bragging rights and cash! Jump on
 								in and become a Moron!{" "}
@@ -34,8 +35,8 @@ function Main() {
 				</div>
 
 				<div className="row">
-					<div className="d-flex justify-content-around col-12  ">
-						<div className="d-flex justify-content-around col-5">
+					<div className="d-flex justify-content-around col  px-0">
+						<div className="d-flex justify-content-around col-md-5 col-8">
 							<button
 								type="button"
 								className="btn btn-secondary btn-lg col my-4 "
@@ -50,9 +51,9 @@ function Main() {
 					</div>
 				</div>
 
-				<div className="row">
-					<div className="d-flex justify-content-around col-12  ">
-						<Link to="/reg" className=" d-flex justify-content-around col-5">
+				<div className="row ">
+					<div className="d-flex justify-content-around col px-0 ">
+						<Link to="/reg" className=" d-flex justify-content-around col-md-5 col-8">
 							<button
 								type="button"
 								className="btn btn-primary col btn-lg my-4"
@@ -63,11 +64,11 @@ function Main() {
 					</div>
 				</div>
 
-				<div className="row">
-					<div className="d-flex justify-content-around col-12  ">
+				<div className="row px-0">
+					<div className="d-flex justify-content-around col  px-0">
 						<Link
 							to="/scoring"
-							className="d-flex justify-content-around col-5"
+							className="d-flex justify-content-around col-md-5 col-8 "
 						>
 							<button
 								type="button"
@@ -82,6 +83,7 @@ function Main() {
 					{" "}
 					<p className="mb-5"></p>
 				</div>
+			</div>
 			</div>
 		</>
 	);

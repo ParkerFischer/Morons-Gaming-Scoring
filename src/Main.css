@@ -28,6 +28,23 @@
 	background-color: #2836189a !important;
 	border-color: #283618 !important;
 }
+
+.btn-warning,
+.btn-warning:active,
+.btn-warning:visited,
+.btn-warning:focus {
+	background-color: #BC6C25 !important;
+	border-color: #BC6C25 !important;
+}
+.btn-warning:hover {
+	background-color: #BC6C25 !important;
+	border-color: #BC6C25 !important;
+}
+
+
+
+
+
 .scorebox {
 	border-radius: 25px;
 	background-color: #DDA15E;

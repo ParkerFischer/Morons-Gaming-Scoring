@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link, useHistory } from "react-router-dom";
+import DiscordPostRegistration from './DiscordPostRegistration'
 
 //registration form
 export default function Registration() {
@@ -8,17 +9,42 @@ export default function Registration() {
 	const initialState = {
 		teamName: "",
 		startTime: "",
-		squadSize: "",
+		day: "",
 		member1: "",
-		member1KD: "",
+		member1KD: "0",
 		member2: "",
-		member2KD: "",
+		member2KD: "0",
 		member3: "",
-		member3KD: "",
+		member3KD: "0",
 		member4: "",
-		member4KD: "",
+		member4KD: "0",
 	};
+
+
+
 	const [registration, setRegistration] = useState({ ...initialState });
+  const teamKD = (parseFloat(registration.member1KD) + parseFloat(registration.member2KD) + parseFloat(registration.member3KD) + parseFloat(registration.member4KD))
+  const teamHandicap = teamKD <= 5.49 ? 0 : ((teamKD - 5.4).toFixed(1)*10*3)
+
+
+  const regFormToBePosted = 
+`Start Time: ${registration.startTime}
+ Day: ${registration.day}
+ Handicap: -${teamHandicap}
+ Team K/D: ${teamKD}
+ Player 1: ${registration.member1} K/D: ${registration.member1KD} 
+ Player 2: ${registration.member2} K/D: ${registration.member2KD} 
+ Player 3: ${registration.member3} K/D: ${registration.member3KD} 
+ Player 4: ${registration.member4} K/D: ${registration.member4KD} 
+`
+
+
+  
+
+
+
+
+
 
 	function changeHandler({ target: { name, value } }) {
 		setRegistration((prevState) => ({
@@ -27,26 +53,19 @@ export default function Registration() {
 		}));
 	}
 
+
+
+
 	function cancelHandler() {
 		history.goBack();
 	}
 
 	function submitHandler(event) {
 		event.preventDefault();
-
-		fetch("http://localhost:3000/reg", {
-			//api url to create data doesn't exist atm (404)
-			method: "POST",
-			body: JSON.stringify(registration),
-			headers: { "Content-Type": "application/json" },//tells server sending json data
-		})
-			.then(() => {
-				console.log("registration complete");
-				history.push("/");
-			})
-			.catch((error) => console.error(error));
-			
-			console.log(registration)
+    DiscordPostRegistration(regFormToBePosted, registration.teamName)
+		console.log("registration complete");
+		history.push("/");
+	  console.log(registration)
 			
 	}
 
@@ -59,7 +78,7 @@ export default function Registration() {
 			<form className="registration m-5 text-light" onSubmit={submitHandler}>
 				<fieldset>
 					<div className="row">
-						<div className="col">
+						<div className="col-md">
 							<label htmlFor="teamName">Team Name</label>
 							<input
 								type="text"
@@ -74,41 +93,54 @@ export default function Registration() {
 						</div>
 						<div className="col">
 							<div className="row">
-								<div className="col">
-									<label htmlFor="startTime">Start Time</label>
-									<select
+								<div className="col-md my-1">
+									<label htmlFor="startTime" >Start Time</label>
+									<input
 										id="inputState"
 										className="form-control"
 										name="startTime"
 										value={registration.startTime}
 										onChange={changeHandler}
 										require="true"
+                    type='time'
 									>
-										<option value>Choose...</option>
-										<option>...</option>
-									</select>
+									
+									</input>
 								</div>
-								<div className="col">
-									<label htmlFor="squadSize">Squad Size</label>
+								<div className="col-md">
+									<label htmlFor="squadSize">Day</label>
 									<select
 										id="inputState"
 										className="form-control"
-										name="squadSize"
-										value={registration.squadSize}
+										name="day"
+										value={registration.day}
 										onChange={changeHandler}
 										require="true"
 									>
 										<option value>Choose...</option>
-										<option>...</option>
+										<option value="Friday">Friday</option>
+                    <option value="Saturday">Saturday</option>
+                    
 									</select>
 								</div>
+                <div className="col my-3 text-center">
+								<p>Team K/D</p>
+                <p>{teamKD}</p>
+								</div>
+                
+                <div className="col my-3 text-center">
+								<p>Team Handicap</p>
+                <p>{`-${teamHandicap}`}</p>
+								</div>
+
+
 							</div>
 						</div>
 					</div>
 
-					<div className="row">
+					<div className="row text-center my-2">
 						<div className="col">
-							<label htmlFor="member1">Member #1 Name</label>
+							<label htmlFor="member1">Player #1 Name</label>
 							<input
 								type="text"
 								id="member1"
@@ -120,10 +152,10 @@ export default function Registration() {
 								onChange={changeHandler}
 							/>
 						</div>
-						<div className="col">
-							<label htmlFor="member1KD">Member #1 KD</label>
+						<div className="col ">
+							<label htmlFor="member1KD">Player #1 KD</label>
 							<input
-								type="text"
+								
 								id="member1KD"
 								name="member1KD"
 								className="form-control"
@@ -131,12 +163,14 @@ export default function Registration() {
 								require="true"
 								value={registration.member1KD}
 								onChange={changeHandler}
+                type="number" 
+                step="0.01"
 							/>
 						</div>
 					</div>
-					<div className="row">
+					<div className="row text-center my-2">
 						<div className="col">
-							<label htmlFor="member2">Member #2 Name</label>
+							<label htmlFor="member2">Player #2 Name</label>
 							<input
 								type="text"
 								id="member2"
@@ -149,9 +183,10 @@ export default function Registration() {
 							/>
 						</div>
 						<div className="col">
-							<label htmlFor="member2KD">Member #2 KD</label>
+							<label htmlFor="member2KD">Player #2 KD</label>
 							<input
-								type="text"
+								type="number" 
+                step="0.01"
 								id="member2KD"
 								name="member2KD"
 								className="form-control"
@@ -162,9 +197,9 @@ export default function Registration() {
 							/>
 						</div>
 					</div>
-					<div className="row">
+					<div className="row text-center my-2">
 						<div className="col">
-							<label htmlFor="member3">Member #3 Name</label>
+							<label htmlFor="member3">Player #3 Name</label>
 							<input
 								type="text"
 								id="member3"
@@ -177,9 +212,10 @@ export default function Registration() {
 							/>
 						</div>
 						<div className="col">
-							<label htmlFor="member3KD">Member #3 KD</label>
+							<label htmlFor="member3KD">Player #3 KD</label>
 							<input
-								type="text"
+								type="number" 
+                step="0.01"
 								id="member3KD"
 								name="member3KD"
 								className="form-control"
@@ -190,9 +226,9 @@ export default function Registration() {
 							/>
 						</div>
 					</div>
-					<div className="row">
+					<div className="row text-center my-2">
 						<div className="col">
-							<label htmlFor="member4">Member #4 Name</label>
+							<label htmlFor="member4">Player #4 Name</label>
 							<input
 								type="text"
 								id="member4"
@@ -205,9 +241,10 @@ export default function Registration() {
 							/>
 						</div>
 						<div className="col">
-							<label htmlFor="member4KD">Member #4 KD</label>
+							<label htmlFor="member4KD">Player #4 KD</label>
 							<input
-								type="text"
+								type="number" 
+                step="0.01"
 								id="member4KD"
 								name="member4KD"
 								className="form-control"
@@ -218,17 +255,20 @@ export default function Registration() {
 							/>
 						</div>
 					</div>
-
+<div className='row justify-content-center'>
+          <button type="submit" className="btn btn-primary my-2 col col-md-5" onClick={submitHandler}>
+						Submit
+					</button>
+          </div>
+          <div className='row justify-content-center'>
 					<button
 						type="button"
-						className="btn btn-secondary mr-2"
+						className="btn btn-warning  my-2 text-light col col-md-5"
 						onClick={cancelHandler}
 					>
 						Cancel
 					</button>
-					<button type="submit" className="btn btn-primary">
-						Submit
-					</button>
+			</div>
 				</fieldset>
 			</form>
 		</>

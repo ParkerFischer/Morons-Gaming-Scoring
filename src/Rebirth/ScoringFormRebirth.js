@@ -160,6 +160,7 @@ export default function ScoringFormRebirth({
               size="5"
               id="startTime"
               type="time"
+              
               name="startTime"
               onChange={handleStartTimeChange}
               value={startTime}

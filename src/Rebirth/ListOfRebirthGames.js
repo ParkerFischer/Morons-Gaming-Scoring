@@ -8,7 +8,7 @@ export default function ListOfRebirthGames({ game }) {
       <h4 className='d-flex col  text-center justify-content-center'>{` Total Points: ${game.score}`}</h4>
       </div>
       <div className='row d-flex justify-content-center scorebox3 mx-1'>
-      <h6 className='d-flex col-4 text-center justify-content-center mx-1'>{`Placed ${game.placement} `}</h6>
+      <h6 className='d-flex col-4 text-center justify-content-center mx-1'>{`Placed: ${game.placement} `}</h6>
       <h6 className='d-flex col-4 text-center justify-content-center mx-1'>{`Time: ${game.startTime} `}</h6>
       </div>
       
