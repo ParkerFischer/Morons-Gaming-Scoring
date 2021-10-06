@@ -1,73 +1,68 @@
 .bg-dark {
-	background-color: black !important;
+  background-color: black !important;
 }
 
 .bg-light {
-	background-color: white !important;
+  background-color: white !important;
 }
 
 .btn-secondary,
 .btn-secondary:active,
 .btn-secondary:visited,
 .btn-secondary:focus {
-	background-color: rgb(103, 5, 133) !important;
-	border-color: rgb(103, 5, 133) !important;
+  background-color: rgb(103, 5, 133) !important;
+  border-color: rgb(103, 5, 133) !important;
 }
 .btn-secondary:hover {
-	background-color: rgba(103, 5, 133, 0.637) !important;
+  background-color: rgba(103, 5, 133, 0.637) !important;
 }
 
 .btn-primary,
 .btn-primary:active,
 .btn-primary:visited,
 .btn-primary:focus {
-	background-color: #283618 !important;
-	border-color: #283618 !important;
+  background-color: #283618 !important;
+  border-color: #283618 !important;
 }
 .btn-primary:hover {
-	background-color: #2836189a !important;
-	border-color: #283618 !important;
+  background-color: #2836189a !important;
+  border-color: #283618 !important;
 }
 
 .btn-warning,
 .btn-warning:active,
 .btn-warning:visited,
 .btn-warning:focus {
-	background-color: #BC6C25 !important;
-	border-color: #BC6C25 !important;
+  background-color: #bc6c25 !important;
+  border-color: #bc6c25 !important;
 }
 .btn-warning:hover {
-	background-color: #BC6C25 !important;
-	border-color: #BC6C25 !important;
+  background-color: #bc6c25 !important;
+  border-color: #bc6c25 !important;
 }
 
-
-
-
-
 .scorebox {
-	border-radius: 25px;
-	background-color: #DDA15E;
+  border-radius: 25px;
+  background-color: #dda15e;
 }
 
 .scorebox2 {
-	border-radius: 25px;
-	background-color: #606C38;
+  border-radius: 25px;
+  background-color: #606c38;
 }
 
 .scorebox3 {
-	color: black;
-	border-radius: 15px;
-	background-color: #FEFAE0;
+  color: black;
+  border-radius: 15px;
+  background-color: #fefae0;
 }
 
-
 body {
-	height: 100%;
-	overflow: auto;
-	background-color: #000000;
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+  background-color: #000000;
 }
 
 @media only screen and (min-width: 600px) {
-
-  }
+}

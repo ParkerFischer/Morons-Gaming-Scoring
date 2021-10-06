@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import ScoringFormRebirth from "./ScoringFormRebirth";
-import ListOfRebirthGames from "./ListOfRebirthGames";
-import ScoredGamesRebirth from "./ScoredGamesRebirth";
+import ScoringFormVerdansk from "./ScoringFormVerdansk";
+import ListOfVerdanskGames from "./ListOfVerdanskGames";
+import ScoredGamesVerdansk from "./ScoredGamesVerdansk";
 
 //this is the main page that inially loads when you click rebirth
-export default function Rebirth({
+export default function Verdansk({
   teamName,
   player1,
   player2,
@@ -15,11 +15,11 @@ export default function Rebirth({
   //used to hold all games played
   const [games, setGames] = useState([]);
   //this is used to generate a card for each game played to be displayed
-  const listedGames = games.map((game) => <ListOfRebirthGames game={game} />);
+  const listedGames = games.map((game) => <ListOfVerdanskGames game={game} />);
 
   return (
     <>
-      <ScoredGamesRebirth
+      <ScoredGamesVerdansk
         handicap={handicap}
         teamName={teamName}
         player1={player1}
@@ -30,7 +30,7 @@ export default function Rebirth({
       />
       <div className="row justify-content-around">
         <div className="col-md-6 col-md-5">
-          <ScoringFormRebirth
+          <ScoringFormVerdansk
             player1={player1}
             player2={player2}
             player3={player3}

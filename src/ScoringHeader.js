@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Verdansk from "./Verdansk";
+import Verdansk from "./Verdansk/Verdansk";
 import Rebirth from "./Rebirth/Rebirth.js";
 import ScoringTeamSetForm from "./Rebirth/ScoringTeamSetForm";
 
@@ -32,7 +32,14 @@ export default function ScoringHeader() {
         player4={player4}
       />
     ) : (
-      <Verdansk />
+      <Verdansk
+        handicap={handicap}
+        teamName={teamName}
+        player1={player1}
+        player2={player2}
+        player3={player3}
+        player4={player4}
+      />
     );
 
   //this handles the click for Verdansk

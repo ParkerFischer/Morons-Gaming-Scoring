@@ -28,8 +28,11 @@ export default function ScoringTeamSetForm({
     <div className="">
       <div className="d-flex justify-content-around my-3">
         <form className="d-flex justify-content-around flex-wrap">
-          <label htmlFor="teamName" className="form-label mx-2 text-light text-center">
-             Team Name
+          <label
+            htmlFor="teamName"
+            className="form-label mx-2 text-light text-center"
+          >
+            Team Name
             <input
               className="form-control text-center"
               size="16"
@@ -43,7 +46,10 @@ export default function ScoringTeamSetForm({
             />
           </label>
 
-          <label htmlFor="player1" className="form-label mx-2 text-light text-center">
+          <label
+            htmlFor="player1"
+            className="form-label mx-2 text-light text-center"
+          >
             Player 1 Tag
             <input
               className="form-control text-center"
@@ -58,7 +64,10 @@ export default function ScoringTeamSetForm({
             />
           </label>
 
-          <label htmlFor="player2" className="form-label mx-2 text-light text-center">
+          <label
+            htmlFor="player2"
+            className="form-label mx-2 text-light text-center"
+          >
             Player 2 Tag
             <input
               className="form-control text-center"
@@ -73,7 +82,10 @@ export default function ScoringTeamSetForm({
             />
           </label>
 
-          <label htmlFor="player3" className="form-label mx-2 text-light text-center">
+          <label
+            htmlFor="player3"
+            className="form-label mx-2 text-light text-center"
+          >
             Player 3 Tag
             <input
               className="form-control text-center"
@@ -88,7 +100,10 @@ export default function ScoringTeamSetForm({
             />
           </label>
 
-          <label htmlFor="player4" className="form-label mx-2 text-light text-center">
+          <label
+            htmlFor="player4"
+            className="form-label mx-2 text-light text-center"
+          >
             Player 4 Tag
             <input
               className="form-control text-center"
@@ -103,7 +118,10 @@ export default function ScoringTeamSetForm({
             />
           </label>
 
-          <label htmlFor="handicap" className="form-label mx-2 text-light text-center">
+          <label
+            htmlFor="handicap"
+            className="form-label mx-2 text-light text-center"
+          >
             Team Handicap
             <input
               className="form-control text-center"

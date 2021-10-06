@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 //this is the form for entering the results of each game.
-export default function ScoringFormRebirth({
+export default function ScoringFormVerdansk({
   player1,
   player2,
   player3,
@@ -14,17 +14,31 @@ export default function ScoringFormRebirth({
   const [player2Kills, setPlayer2Kills] = useState("");
   const [player3Kills, setPlayer3Kills] = useState("");
   const [player4Kills, setPlayer4Kills] = useState("");
+  const [player1Dmg, setPlayer1Dmg] = useState("");
+  const [player2Dmg, setPlayer2Dmg] = useState("");
+  const [player3Dmg, setPlayer3Dmg] = useState("");
+  const [player4Dmg, setPlayer4Dmg] = useState("");
   const [startTime, setStartTime] = useState("");
   const [placement, setPlacement] = useState("");
 
   //this is the scoring mechanism for the placment method
   let placePoints = 0;
-  if (parseInt(placement) === 5 || parseInt(placement) === 4) {
+  if (parseInt(placement) <= 25 && parseInt(placement) > 20) {
+    placePoints = 1;
+  } else if (parseInt(placement) <= 20 && parseInt(placement) > 15) {
+    placePoints = 2;
+  } else if (parseInt(placement) <= 15 && parseInt(placement) > 10) {
     placePoints = 5;
-  } else if (parseInt(placement) === 3 || parseInt(placement) === 2) {
-    placePoints = 7;
-  } else if (parseInt(placement) === 1) {
+  } else if (parseInt(placement) <= 10 && parseInt(placement) > 7) {
     placePoints = 10;
+  } else if (parseInt(placement) <= 7 && parseInt(placement) > 5) {
+    placePoints = 12;
+  } else if (parseInt(placement) <= 5 && parseInt(placement) > 3) {
+    placePoints = 15;
+  } else if (parseInt(placement) <= 3 && parseInt(placement) > 1) {
+    placePoints = 18;
+  } else if (parseInt(placement) === 1) {
+    placePoints = 20;
   }
 
   //this is a variable that holds all the kills for the entire team.
@@ -33,8 +47,18 @@ export default function ScoringFormRebirth({
     parseInt(player2Kills) +
     parseInt(player3Kills) +
     parseInt(player4Kills);
+  //this is a variable that holds all the DMG for the entire team.
+  const totalDmg =
+    parseInt(player1Dmg) +
+    parseInt(player2Dmg) +
+    parseInt(player3Dmg) +
+    parseInt(player4Dmg);
   //this is used to calculate the score for the game.
-  const score = parseInt(totalKills) + parseInt(placePoints);
+  const score = (
+    parseInt(totalKills) +
+    parseInt(placePoints) +
+    parseInt(totalDmg) / 1500
+  ).toFixed(2);
   //this is the object that is created with each new game played.
   const newGame = {
     placement,
@@ -48,6 +72,12 @@ export default function ScoringFormRebirth({
     player2Kills,
     player3Kills,
     player4Kills,
+    teamKills: totalKills,
+    player1Dmg,
+    player2Dmg,
+    player3Dmg,
+    player4Dmg,
+    teamDmg: totalDmg,
     startTime,
   };
 
@@ -60,6 +90,10 @@ export default function ScoringFormRebirth({
     setPlayer3Kills(event.target.value);
   const handlePlayer4KillChange = (event) =>
     setPlayer4Kills(event.target.value);
+  const handlePlayer1DmgChange = (event) => setPlayer1Dmg(event.target.value);
+  const handlePlayer2DmgChange = (event) => setPlayer2Dmg(event.target.value);
+  const handlePlayer3DmgChange = (event) => setPlayer3Dmg(event.target.value);
+  const handlePlayer4DmgChange = (event) => setPlayer4Dmg(event.target.value);
   const handleStartTimeChange = (event) => setStartTime(event.target.value);
   const handleplacementChange = (event) => setPlacement(event.target.value);
 
@@ -71,6 +105,10 @@ export default function ScoringFormRebirth({
     setPlayer2Kills("");
     setPlayer3Kills("");
     setPlayer4Kills("");
+    setPlayer1Dmg("");
+    setPlayer2Dmg("");
+    setPlayer3Dmg("");
+    setPlayer4Dmg("");
     setStartTime("");
     setPlacement("");
   }
@@ -99,6 +137,16 @@ export default function ScoringFormRebirth({
                   value={player1Kills}
                   placeholder="Kills"
                 />
+                <input
+                  className="form-control text-center mt-1"
+                  size="5"
+                  id="player1 Dmg"
+                  type="text"
+                  name="player1 Dmg"
+                  onChange={handlePlayer1DmgChange}
+                  value={player1Dmg}
+                  placeholder="Dmg"
+                />
               </label>
               <label
                 htmlFor="player2 kills"
@@ -114,6 +162,16 @@ export default function ScoringFormRebirth({
                   onChange={handlePlayer2KillChange}
                   value={player2Kills}
                   placeholder="Kills"
+                />
+                <input
+                  className="form-control text-center mt-1"
+                  size="5"
+                  id="player2 Dmg"
+                  type="text"
+                  name="player2 Dmg"
+                  onChange={handlePlayer2DmgChange}
+                  value={player2Dmg}
+                  placeholder="DMG"
                 />
               </label>
               <label
@@ -131,6 +189,16 @@ export default function ScoringFormRebirth({
                   value={player3Kills}
                   placeholder="Kills"
                 />
+                <input
+                  className="form-control text-center mt-1"
+                  size="5"
+                  id="player3 Dmg"
+                  type="text"
+                  name="player3 Dmg"
+                  onChange={handlePlayer3DmgChange}
+                  value={player3Dmg}
+                  placeholder="DMG"
+                />
               </label>
               <label
                 htmlFor="player4 kills"
@@ -146,6 +214,16 @@ export default function ScoringFormRebirth({
                   onChange={handlePlayer4KillChange}
                   value={player4Kills}
                   placeholder="Kills"
+                />
+                <input
+                  className="form-control text-center mt-1"
+                  size="5"
+                  id="player4 Dmg"
+                  type="text"
+                  name="player4 Dmg"
+                  onChange={handlePlayer4DmgChange}
+                  value={player4Dmg}
+                  placeholder="DMG"
                 />
               </label>
             </div>

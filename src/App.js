@@ -5,7 +5,7 @@ import Main from "./Main";
 import NotFound from "./NotFound";
 import Registration from "./Registration";
 import ScoringHeader from "./ScoringHeader";
-import Header from './Header';
+import Header from "./Header";
 import "./Main.css";
 
 //main switch and router
@@ -13,23 +13,21 @@ function App() {
   return (
     <>
       <div className="container-fluid bg-dark px-0">
-        
         <Router>
-        
           <Switch>
             <Route exact path="/">
               <Main />
             </Route>
             <Route path="/reg">
-              <Header/>
+              <Header />
               <Registration />
             </Route>
             <Route path="/scoring">
-              <Header/>
+              <Header />
               <ScoringHeader />
             </Route>
             <Route>
-              <Header/>
+              <Header />
               <NotFound />
             </Route>
           </Switch>

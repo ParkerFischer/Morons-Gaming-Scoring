@@ -1,4 +1,4 @@
-//this is used to post to discord for registration
+//this is used to post to discord for Verdansk
 const webhook = require("webhook-discord");
 
 const Hook = new webhook.Webhook(
