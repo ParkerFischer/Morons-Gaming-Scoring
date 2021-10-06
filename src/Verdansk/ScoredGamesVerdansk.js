@@ -109,10 +109,9 @@ export default function ScoredGamesVerdansk({
         } Team Kills: ${getGamesKills(4)} Team DMG Points: ${getGamesDMG(
           4
         )} Placement: ${topFiveGames[4].placement} 
-         Points Scored: ${totalScore} (Total points minus handicap ${getTotal(
-          "score",
-          topFiveGames
-        )}${handicap})
+         Points Scored: ${(
+            totalScore + +handicap
+          ).toFixed(2)} (Total points minus handicap ${totalScore}${handicap})
     `
       : null;
 
