@@ -85,6 +85,7 @@ export default function ScoringHeader() {
           type="button"
           className="btn btn-primary btn-lg col-4 mr-2"
           onClick={handleClickR}
+          disabled={isDisabled}
         >
           Rebirth
         </button>
@@ -92,6 +93,7 @@ export default function ScoringHeader() {
           type="button"
           className="btn btn-primary btn-lg col-4"
           onClick={handleClickV}
+          disabled={isDisabled}
         >
           Verdansk '84'
         </button>
