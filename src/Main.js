@@ -35,10 +35,14 @@ function Main() {
 
 				<div className="row">
 					<div className="d-flex justify-content-around col-12  ">
-						<div className="d-flex justify-content-around col-12">
+						<div className="d-flex justify-content-around col-5">
 							<button
 								type="button"
-								className="btn btn-secondary btn-lg col-5 my-4 "
+								className="btn btn-secondary btn-lg col my-4 "
+								onClick={(e) => {
+									e.preventDefault();
+									window.location.href='https://discord.gg/XWZWkG8r4m';
+									}}
 							>
 								Become a Moron!
 							</button>
@@ -48,10 +52,10 @@ function Main() {
 
 				<div className="row">
 					<div className="d-flex justify-content-around col-12  ">
-						<Link to="/reg" className=" d-flex justify-content-around col-12">
+						<Link to="/reg" className=" d-flex justify-content-around col-5">
 							<button
 								type="button"
-								className="btn btn-primary col-5 btn-lg my-4"
+								className="btn btn-primary col btn-lg my-4"
 							>
 								Team Registration
 							</button>
@@ -63,11 +67,11 @@ function Main() {
 					<div className="d-flex justify-content-around col-12  ">
 						<Link
 							to="/scoring"
-							className="d-flex justify-content-around col-12"
+							className="d-flex justify-content-around col-5"
 						>
 							<button
 								type="button"
-								className="btn btn-primary col-5 btn-lg my-4"
+								className="btn btn-primary col btn-lg my-4"
 							>
 								Submit Scores
 							</button>

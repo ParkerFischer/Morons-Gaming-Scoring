@@ -64,7 +64,7 @@ export default function ScoredGamesRebirth({
   //this is the format for the string to be posted to the discord. is null if 4 games are not played
   const scoreToBePosted =
     topFourGames.length === 4 ? 
-    `Highest single kill game: ${topKillsGame[0].player} - ${topKillsGame[0].kills}
+    `Highest single kill game: ${topKillsGame[0].player}: ${topKillsGame[0].kills} Kills
          Game 1 - ${topFourGames[0].score} - Time: ${topFourGames[0].startTime} Team Kills: ${getGamesKills(0)} Placement: ${topFourGames[0].placement} 
          Game 2 - ${topFourGames[1].score} - Time: ${topFourGames[1].startTime} Team Kills: ${getGamesKills(1)} Placement: ${topFourGames[1].placement} 
          Game 3 - ${topFourGames[2].score} - Time: ${topFourGames[2].startTime} Team Kills: ${getGamesKills(2)} Placement: ${topFourGames[2].placement} 
@@ -81,13 +81,13 @@ export default function ScoredGamesRebirth({
   //this is the body of the display
   return (
     <>
-    <div className="row my-4 d-flex justify-content-around text-light mx-0 text-center align-text-center">
-      <div className=" col-5 d-flex justify-content-around scorebox pt-3 pb-2">
+    <div className='d-flex justify-content-center'>
+      <div className="col-md-8  d-flex mx-4 text-center align-text-center scorebox3 pt-3 pb-2 my-4 ">
         <div className="col">
       <div className='row justify-content-center'>
           <h4 className="font-weight-bold mr-2"> Points Scored:</h4> 
           <h4 className="font-weight-normal">{`${totalScore}`}</h4>
-          <p>{`(Total points minus handicap ${getTotal(
+          <p className='ml-2'>{`(Total points minus handicap ${getTotal(
             "score",
             topFourGames
           )}${handicap})`}</p>
@@ -103,16 +103,17 @@ export default function ScoredGamesRebirth({
       <div className='row justify-content-center'>
         <h4 className="font-weight-bold mr-2">Highest single kill game:</h4>
           {topKillsGame.length === 1 && (
-             <h4 className="font-weight-normal">{`${topKillsGame[0].player} - ${topKillsGame[0].kills}`}</h4>
+             <h4 className="font-weight-normal">{`${topKillsGame[0].player}: ${topKillsGame[0].kills} Kills`}</h4>
           )}
         </div>
          </div>
 </div>
-
-        <div className="col-6 d-flex justify-content-around scorebox pt-3 pb-2">
+</div>
+<div className='d-flex justify-content-around flex-wrap mb-4'>
+ 
           
-          <div className='col-3'>
-          <h4 className='mb-1'>{`${player1}`}</h4>
+          <div className=' col-md-2 scorebox text-light text-center align-text-center mx-4 my-2'>
+          <h4 className='my-1'>{`${player1}`}</h4>
           <p className='mb-1'>{`Kills: ${getTotal("player1Kills",topFourGames)}`} </p>
           <p className='mb-1'>% of points in scored games</p>
           <p className='mb-1'>{`${((getTotal("player1Kills", topFourGames) /
@@ -126,8 +127,8 @@ export default function ScoredGamesRebirth({
           
           </div>
 
-          <div className='col-3'>
-          <h4 className='mb-1'>{`${player2}`}</h4>
+          <div className=' col-md-2 scorebox text-light text-center align-text-center mx-4 my-2'>
+          <h4 className='my-1'>{`${player2}`}</h4>
           <p className='mb-1'>{`Kills: ${getTotal("player2Kills",topFourGames)}`} </p>
           <p className='mb-1'>% of points in scored games</p>
           <p className='mb-1'>{`${((getTotal("player2Kills", topFourGames) /
@@ -142,8 +143,8 @@ export default function ScoredGamesRebirth({
           </div>
 
 
-          <div className='col-3'>
-          <h4 className='mb-1'>{`${player3}`}</h4>
+          <div className=' col-md-2 scorebox text-light text-center align-text-center mx-4 my-2'>
+          <h4 className='my-1'>{`${player3}`}</h4>
           <p className='mb-1'>{`Kills: ${getTotal("player3Kills",topFourGames)}`} </p>
           <p className='mb-1'>% of points in scored games</p>
           <p className='mb-1'>{`${((getTotal("player3Kills", topFourGames) /
@@ -158,8 +159,8 @@ export default function ScoredGamesRebirth({
           </div>
 
 
-          <div className='col-3'>
-          <h4 className='mb-1'>{`${player4}`}</h4>
+          <div className=' col-md-2 scorebox text-light text-center align-text-center mx-4 my-2'>
+          <h4 className='my-1'>{`${player4}`}</h4>
           <p className='mb-1'>{`Kills: ${getTotal("player4Kills",topFourGames)}`} </p>
           <p className='mb-1'>% of points in scored games</p>
           <p className='mb-1'>{`${((getTotal("player4Kills", topFourGames) /
@@ -172,70 +173,79 @@ export default function ScoredGamesRebirth({
           <p className='mb-1'>{`${((getTotal("player4Kills", games) /(getTotal("score", games) - getTotal("placePoints", games))) *100).toFixed()}%`}</p>
           
           </div>
- 
-        </div>
+          </div>
+       
+        
+     
 
-      </div>
 
 
-
-      <div className="row text-light">
-        <div className="border col d-flex">
-          <div className="border col-3">
-            <p>game 1 summary</p>
+      <div className="d-flex justify-content-around flex-wrap mb-4 text-light">
+       
+          <div className="col-md-2 scorebox2 text-light text-center align-text-center mx-4 my-2">
+            <h4 className='my-2'>Best Game</h4>
             {topFourGames.length >= 1 && (
               <p>
-                {`Points: ${topFourGames[0].score} - Time: ${
-                  topFourGames[0].startTime
-                } Team Kills: ${getGamesKills(0)} Placement: ${
-                  topFourGames[0].placement
-                }`}{" "}
+                {`Total Points: ${topFourGames[0].score}`}
+                <br/>
+                {`Start Time: ${topFourGames[0].startTime} `}
+                <br/>
+                {`Total Team Kills: ${getGamesKills(0)}`}
+                <br/>
+                {`Placement: ${topFourGames[0].placement}`}{" "}
               </p>
             )}
           </div>
-          <div className="border col-3">
-            <p>game 2 summary</p>
+          <div className="col-md-2 scorebox2 text-light text-center align-text-center mx-4 my-2">
+            <h4 className='my-2'>Game 2</h4>
             {topFourGames.length >= 2 && (
               <p>
-                {`Points: ${topFourGames[1].score} - Time: ${
-                  topFourGames[1].startTime
-                } Team Kills: ${getGamesKills(1)} Placement: ${
-                  topFourGames[1].placement
-                }`}{" "}
+                {`Total Points: ${topFourGames[1].score}`}
+                <br/>
+                {`Start Time: ${topFourGames[1].startTime} `}
+                <br/>
+                {`Total Team Kills: ${getGamesKills(1)}`}
+                <br/>
+                {`Placement: ${topFourGames[1].placement}`}{" "}
               </p>
             )}
           </div>
-          <div className="border col-3">
-            <p>game 3 summary</p>
+          <div className="col-md-2 scorebox2 text-light text-center align-text-center mx-4 my-2">
+          <h4 className='my-2'>Game 3</h4>
             {topFourGames.length >= 3 && (
               <p>
-                {`Points: ${topFourGames[2].score} - Time: ${
-                  topFourGames[2].startTime
-                } Team Kills: ${getGamesKills(2)} Placement: ${
-                  topFourGames[2].placement
-                }`}{" "}
+                {`Total Points: ${topFourGames[2].score}`}
+                <br/>
+                {`Start Time: ${topFourGames[2].startTime} `}
+                <br/>
+                {`Total Team Kills: ${getGamesKills(2)}`}
+                <br/>
+                {`Placement: ${topFourGames[2].placement}`}{" "}
               </p>
             )}
           </div>
-          <div className="border col-3">
-            <p>game 4 summary</p>
+          <div className="col-md-2 scorebox2 text-light text-center align-text-center mx-4 my-2">
+          <h4 className='my-2'>Game To Replace</h4>
             {topFourGames.length >= 4 && (
-              <p>
-                {`Points: ${topFourGames[3].score}  Time: ${
-                  topFourGames[3].startTime
-                } Team Kills: ${getGamesKills(3)} Placement: ${
-                  topFourGames[3].placement
-                }`}{" "}
+              <p className='my-1'>
+                {`Total Points: ${topFourGames[3].score}`}
+                <br/>
+                {`Start Time: ${topFourGames[3].startTime} `}
+                <br/>
+                {`Total Team Kills: ${getGamesKills(3)}`}
+                <br/>
+                {`Placement: ${topFourGames[3].placement}`}{" "}
               </p>
             )}
-          </div>
         </div>
       </div>
-      <div className="row">
+
+
+      <div className="row d-flex justify-content-center M my-5">
         <button
           onClick={postHandler}
           type="button"
-          className="btn btn-primary ml-2"
+          className="btn-lg btn-primary ml-2"
         >
           Submit Team Score
         </button>

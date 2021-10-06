@@ -29,8 +29,8 @@ export default function Rebirth({
         player4={player4}
         games={games}
       /> 
-      <div className='row'>
-      <div className='col-6'>
+      <div className='row justify-content-around'>
+      <div className='col-md-6 col-md-5'>
       <ScoringFormRebirth
         player1={player1}
         player2={player2}
@@ -39,7 +39,7 @@ export default function Rebirth({
         games={games}
         setGames={setGames}
       /></div>
-      <div className='col-6'>
+      <div className=' d-flex col col-md-5 flex-wrap mx-2'>
       {listedGames}
       </div>
       </div>

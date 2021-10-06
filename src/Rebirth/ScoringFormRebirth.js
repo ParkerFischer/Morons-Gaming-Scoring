@@ -79,9 +79,9 @@ export default function ScoringFormRebirth({
     <div className="container">
       <div className='d-flex justify-content-around my-3'>
       
-      <form onSubmit={handleFormSubmit} className="d-flex justify-content-around flex-wrap">
+      <form onSubmit={handleFormSubmit} className="d-flex scorebox justify-content-around flex-wrap">
         
-        <div className="d-flex justify-content-around my-3">
+        <div className="d-flex justify-content-around my-2 row col-12">
           <div className="d-flex justify-content-around flex-wrap">
           <label htmlFor="player1 kills" className="form-label mx-2 text-light text-center">
             {`${player1}`}
@@ -139,8 +139,8 @@ export default function ScoringFormRebirth({
         </div>
         
 
-        <div className="row">
-          <label htmlFor="Placement" className="form-label ml-3 text-light">
+        <div className="row col-12 justify-content-center my-2">
+          <label htmlFor="Placement" className=" mx-2 text-center form-label  text-light">
             {`Match Placement`}
             <input
               className="form-control text-center"
@@ -153,13 +153,13 @@ export default function ScoringFormRebirth({
               placeholder="dub?"
             />
           </label>
-          <label htmlFor="startTime" className="form-label ml-3 text-light">
+          <label htmlFor="startTime" className=" mx-2 text-center form-label  text-light">
             {`Match Start Time`}
             <input
               className="form-control text-center"
               size="5"
               id="startTime"
-              type="text"
+              type="time"
               name="startTime"
               onChange={handleStartTimeChange}
               value={startTime}
@@ -169,7 +169,7 @@ export default function ScoringFormRebirth({
         </div>
 
         <div className="row">
-          <button type="submit" className="btn btn-primary ml-2">
+          <button type="submit" className="btn btn-primary mx-2 my-2">
             Submit Game
           </button>
         </div>

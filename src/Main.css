@@ -30,7 +30,18 @@
 }
 .scorebox {
 	border-radius: 25px;
-	background-color: #bc6c25;
+	background-color: #DDA15E;
+}
+
+.scorebox2 {
+	border-radius: 25px;
+	background-color: #606C38;
+}
+
+.scorebox3 {
+	color: black;
+	border-radius: 15px;
+	background-color: #FEFAE0;
 }
 
 
