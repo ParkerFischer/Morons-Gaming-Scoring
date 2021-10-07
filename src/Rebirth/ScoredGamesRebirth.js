@@ -92,7 +92,7 @@ export default function ScoredGamesRebirth({
           topFourGames
         )}${handicap})
     `
-      : null;
+      : "Not enough games played";
 
   //this will call the post to the discord when the post button gets clicked.
   function postHandler(e) {

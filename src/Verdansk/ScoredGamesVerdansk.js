@@ -113,7 +113,7 @@ export default function ScoredGamesVerdansk({
             totalScore + +handicap
           ).toFixed(2)} (Total points minus handicap ${totalScore}${handicap})
     `
-      : null;
+      : "Not enough games played";
 
   //this will call the post to the discord when the post button gets clicked.
   function postHandler(e) {

@@ -2,7 +2,7 @@
 const webhook = require("webhook-discord");
 
 const Hook = new webhook.Webhook(
-  "https://discord.com/api/webhooks/892876362443005982/CRTQTiHzR3EcWckIWsK91okq23PwbQ5kgW0_m0rkY8EmEAnR2vlp2dkoxWZA7DMP1OXT"
+  "https://discord.com/api/webhooks/895504408937385984/nyaGB_SelPz6RB_gEVvLEWjzTtxxJMy1NSApVta40xGFDCOQpJ0KZM_F2DgBu4OtHN9x"
 );
 
 export default function postMessageToDiscord(message, name) {
