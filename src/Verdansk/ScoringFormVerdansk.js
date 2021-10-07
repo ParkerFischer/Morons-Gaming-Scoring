@@ -145,7 +145,7 @@ export default function ScoringFormVerdansk({
                   name="player1 Dmg"
                   onChange={handlePlayer1DmgChange}
                   value={player1Dmg}
-                  placeholder="Dmg"
+                  placeholder="DMG"
                 />
               </label>
               <label
@@ -243,7 +243,7 @@ export default function ScoringFormVerdansk({
                 name="Placement"
                 onChange={handleplacementChange}
                 value={placement}
-                placeholder="dub?"
+                placeholder="Dub?"
               />
             </label>
             <label
