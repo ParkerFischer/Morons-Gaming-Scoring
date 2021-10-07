@@ -59,10 +59,10 @@ export default function ScoringHeader() {
 
   return (
     <>
-      <div className="d-flex justify-content-center text-center text-light my-5 mx-2">
+      <div className=" d-flex justify-content-center text-center text-light my-5 mx-2">
         <h2>Enter team info and Select Game Mode</h2>
       </div>
-
+<div className='container-fluid '>
       <ScoringTeamSetForm
         teamName={teamName}
         player1={player1}
@@ -101,6 +101,7 @@ export default function ScoringHeader() {
       </div>
 
       {initialLoad && scoreSheet}
+      </div>
     </>
   );
 }

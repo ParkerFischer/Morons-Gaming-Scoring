@@ -8,7 +8,7 @@ function Main() {
   return (
     <>
       <div className="container-fluid px-0">
-        <div className="px-0 mb-5 bg-light d-flex justify-content-center">
+        <div className="px-0 mb-5 mx-0 bg-light d-flex justify-content-center">
           <img
             src={img}
             className="mb-5 d-flex justify-content-center"
@@ -16,9 +16,9 @@ function Main() {
           ></img>
         </div>
 
-        <div className="bg-dark">
-          <div className="row">
-            <div className="d-flex justify-content-center text-center col text-lightpx-0">
+        <div className=" container-fluid bg-dark">
+          <div className=" row">
+            <div className="d-flex justify-content-center text-center col text-light px-0">
               <h2 className="px-0 mx-2 text-light">
                 Welcome to Morons Gaming Co.
               </h2>
