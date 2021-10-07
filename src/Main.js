@@ -10,6 +10,7 @@ function Main() {
       <div className="container-fluid px-0">
         <div className="px-0 mb-5 mx-0 bg-light d-flex justify-content-center">
           <img
+          alt="Morons Gaming Co. Logo"
             src={img}
             className="mb-5 d-flex justify-content-center"
             style={{ width: "60%" }}
