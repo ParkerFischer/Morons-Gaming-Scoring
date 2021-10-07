@@ -362,7 +362,7 @@ export default function ScoredGamesVerdansk({
         <button
           onClick={postHandler}
           type="button"
-          className="btn-lg btn-primary ml-2"
+          className="btn-lg btn-primary  col-7"
         >
           Submit Team Score
         </button>
