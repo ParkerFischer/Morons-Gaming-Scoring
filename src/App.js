@@ -6,6 +6,7 @@ import NotFound from "./NotFound";
 import Registration from "./Registration";
 import ScoringHeader from "./ScoringHeader";
 import Header from "./Header";
+import RegistrationNotComplete from './RegistrationNotComplete'
 import "./Main.css";
 
 //main switch and router
@@ -26,10 +27,16 @@ function App() {
               <Header />
               <ScoringHeader />
             </Route>
+            <Route path="/regerror">
+              <Header />
+              <RegistrationNotComplete />
+            </Route>
             <Route>
               <Header />
               <NotFound />
             </Route>
+
+
           </Switch>
         </Router>
       </div>

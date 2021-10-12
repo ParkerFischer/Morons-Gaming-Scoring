@@ -52,7 +52,7 @@ export default function Registration() {
   function submitHandler(event) {
     event.preventDefault();
     if(registration.startTime === "" || registration.teamName === "" || registration.day === ""){
-      return null
+      return history.push("/regerror");
     }
     DiscordPostRegistration(regFormToBePosted, registration.teamName);
     console.log("registration complete");
