@@ -51,6 +51,9 @@ export default function Registration() {
 
   function submitHandler(event) {
     event.preventDefault();
+    if(registration.startTime === "" || registration.teamName === "" || registration.day === ""){
+      return null
+    }
     DiscordPostRegistration(regFormToBePosted, registration.teamName);
     console.log("registration complete");
     history.push("/");
@@ -68,6 +71,7 @@ export default function Registration() {
           <div className="row">
             <div className="col-md">
               <label htmlFor="teamName">Team Name</label>
+              
               <input
                 type="text"
                 id="teamName"
@@ -77,13 +81,16 @@ export default function Registration() {
                 require="true"
                 value={registration.teamName}
                 onChange={changeHandler}
+              
               />
+              
             </div>
             <div className="col">
               <div className="row">
                 <div className="col-md my-1">
                   <label htmlFor="startTime">Start Time</label>
                   <input
+                    
                     id="inputState"
                     className="form-control"
                     name="startTime"
@@ -94,8 +101,9 @@ export default function Registration() {
                   ></input>
                 </div>
                 <div className="col-md">
-                  <label htmlFor="squadSize">Day</label>
+                  <label htmlFor="day">Day</label>
                   <select
+                    
                     id="inputState"
                     className="form-control"
                     name="day"
@@ -110,7 +118,7 @@ export default function Registration() {
                 </div>
                 <div className="col my-3 text-center">
                   <p>Team K/D</p>
-                  <p>{teamKD}</p>
+                  <p>{teamKD.toFixed(2)}</p>
                 </div>
 
                 <div className="col my-3 text-center">
