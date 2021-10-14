@@ -1,5 +1,6 @@
 import React from "react";
 import postMessageToDiscord from "./PostVerdanskScore";
+import { useHistory } from "react-router-dom";
 
 //this componant is used to generate the summary for the top 4 games AND holds the button to post the scores to the Discord.
 export default function ScoredGamesVerdansk({
@@ -11,6 +12,7 @@ export default function ScoredGamesVerdansk({
   games,
   handicap,
 }) {
+  const history = useHistory();
   //variable that holds the top 5 games played.
   const topFiveGames = games
     .sort((a, b) => {
@@ -118,7 +120,8 @@ export default function ScoredGamesVerdansk({
   //this will call the post to the discord when the post button gets clicked.
   function postHandler(e) {
     e.preventDefault();
-    return postMessageToDiscord(scoreToBePosted, teamName);
+    postMessageToDiscord(scoreToBePosted, teamName)
+    return history.push("/submitted");
   }
 
   //this is the body of the display

@@ -22,7 +22,9 @@ export default function ScoringTeamSetForm({
   const handlePlayer2NameChange = (event) => setPlayer2(event.target.value);
   const handlePlayer3NameChange = (event) => setPlayer3(event.target.value);
   const handlePlayer4NameChange = (event) => setPlayer4(event.target.value);
-  const handleHandicapChange = (event) => setHandicap(event.target.value);
+  const handleHandicapChange = (event) => {
+    if(event.target.value.includes('-')){setHandicap(event.target.value)}else{setHandicap(`-${event.target.value}`)}}
+  
 
   return (
     <div className="">

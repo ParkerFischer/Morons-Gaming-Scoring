@@ -1,15 +1,19 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import DiscordPostRegistration from "./DiscordPostRegistration";
+import { Alert } from 'reactstrap';
 
 //registration form
 export default function Registration() {
   const history = useHistory();
 
+const [show, setShow] = useState(false)
+
   const initialState = {
     teamName: "",
     startTime: "",
     day: "",
+    isPaid: "",
     member1: "",
     member1KD: "0",
     member2: "",
@@ -32,6 +36,7 @@ export default function Registration() {
  Day: ${registration.day}
  Handicap: -${teamHandicap}
  Team K/D: ${teamKD}
+ Paid or Free: ${registration.isPaid}
  Player 1: ${registration.member1} K/D: ${registration.member1KD} 
  Player 2: ${registration.member2} K/D: ${registration.member2KD} 
  Player 3: ${registration.member3} K/D: ${registration.member3KD} 
@@ -51,14 +56,23 @@ export default function Registration() {
 
   function submitHandler(event) {
     event.preventDefault();
-    if(registration.startTime === "" || registration.teamName === "" || registration.day === ""){
-      return history.push("/regerror");
-    }
-    DiscordPostRegistration(regFormToBePosted, registration.teamName);
-    console.log("registration complete");
-    history.push("/");
-    console.log(registration);
+    if(registration.startTime === "" || registration.teamName === "" || registration.day === "" || registration.isPaid === ""){
+      return setShow(true)}
+if(registration.isPaid === 'Paid'){
+  DiscordPostRegistration(regFormToBePosted, registration.teamName);
+  console.log("registration complete");
+  console.log(registration);
+ return  history.push("/regpaid");
+    
+} else {   DiscordPostRegistration(regFormToBePosted, registration.teamName);
+  console.log("registration complete");
+  console.log(registration);}
+  return history.push("/regnotpaid");
   }
+
+
+ 
+
 
   return (
     <>
@@ -69,9 +83,8 @@ export default function Registration() {
       <form className="registration m-5 text-light" onSubmit={submitHandler}>
         <fieldset>
           <div className="row">
-            <div className="col-md">
+            <div className="col-md-5">
               <label htmlFor="teamName">Team Name</label>
-              
               <input
                 type="text"
                 id="teamName"
@@ -83,11 +96,11 @@ export default function Registration() {
                 onChange={changeHandler}
               
               />
-              
+              {show === true && <Alert color="danger">Required</Alert>}
             </div>
             <div className="col">
               <div className="row">
-                <div className="col-md my-1">
+                <div className="col-md ">
                   <label htmlFor="startTime">Start Time</label>
                   <input
                     
@@ -99,6 +112,7 @@ export default function Registration() {
                     require="true"
                     type="time"
                   ></input>
+                  {show === true && <Alert color="danger">Required</Alert>}
                 </div>
                 <div className="col-md">
                   <label htmlFor="day">Day</label>
@@ -115,6 +129,24 @@ export default function Registration() {
                     <option value="Friday">Friday</option>
                     <option value="Saturday">Saturday</option>
                   </select>
+                  {show === true && <Alert color="danger">Required</Alert>}
+                </div>
+                <div className="col-md">
+                  <label htmlFor="day">Paid Team</label>
+                  <select
+                    
+                    id="inputState"
+                    className="form-control"
+                    name="isPaid"
+                    value={registration.isPaid}
+                    onChange={changeHandler}
+                    require="true"
+                  >
+                    <option value>Choose...</option>
+                    <option value="Paid">Paid</option>
+                    <option value="Free">Free</option>
+                  </select>
+                  {show === true && <Alert color="danger">Required</Alert>}
                 </div>
                 <div className="col my-3 text-center">
                   <p>Team K/D</p>

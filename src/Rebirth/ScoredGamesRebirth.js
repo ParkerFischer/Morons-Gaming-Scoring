@@ -1,5 +1,6 @@
 import React from "react";
 import postMessageToDiscord from "./PostRebirthScore";
+import { useHistory } from "react-router-dom";
 
 //this componant is used to generate the summary for the top 4 games AND holds the button to post the scores to the Discord.
 export default function ScoredGamesRebirth({
@@ -11,6 +12,7 @@ export default function ScoredGamesRebirth({
   games,
   handicap,
 }) {
+  const history = useHistory();
   //variable that holds the top 4 games played.
   const topFourGames = games
     .sort((a, b) => {
@@ -97,7 +99,8 @@ export default function ScoredGamesRebirth({
   //this will call the post to the discord when the post button gets clicked.
   function postHandler(e) {
     e.preventDefault();
-    return postMessageToDiscord(scoreToBePosted, teamName);
+    postMessageToDiscord(scoreToBePosted, teamName)
+    return history.push("/submitted");
   }
 
   //this is the body of the display
