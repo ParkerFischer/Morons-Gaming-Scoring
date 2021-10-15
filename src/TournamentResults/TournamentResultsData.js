@@ -18,9 +18,7 @@ type:"Rebirth Quads"
 },
 ]
 
-export default {
-    TournamentResultsData,
-}
+
 
 
 
