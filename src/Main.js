@@ -85,6 +85,21 @@ function Main() {
               </Link>
             </div>
           </div>
+          <div className="row px-0">
+            <div className="d-flex justify-content-around col  px-0">
+              <Link
+                to="/results"
+                className="d-flex justify-content-around col-md-5 col-8 "
+              >
+                <button
+                  type="button"
+                  className="btn btn-primary col btn-lg my-4"
+                >
+                  Tournament Results
+                </button>
+              </Link>
+            </div>
+          </div>
           <div className="row">
             {" "}
             <p className="mb-5"></p>

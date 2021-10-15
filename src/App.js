@@ -9,6 +9,7 @@ import Header from "./Header";
 import RegistrationCompletePaid from './RegistrationCompletePaid'
 import RegistrationCompleteNotPaid from './RegistrationCompleteNotPaid'
 import ThanksForSubmission from './ThanksForSubmission'
+import TournamentResults from './TournamentResults/TournamentResults'
 import "./Main.css";
 
 //main switch and router
@@ -40,6 +41,10 @@ function App() {
             <Route path="/submitted">
               <Header />
               <ThanksForSubmission />
+            </Route>
+            <Route path="/results">
+              <Header />
+              <TournamentResults />
             </Route>
             <Route>
               <Header />
