@@ -45,7 +45,7 @@ export default function ScoredGamesVerdansk({
   //this will look through all games played and make an array of objects that hold each individuals performance in each game.
   function killsArray(arr) {
     let killsPerPlayer = [];
-    arr.map((game) => {
+    arr.forEach((game) => {
       killsPerPlayer.push({ player: game.player1, kills: game.player1Kills });
       killsPerPlayer.push({ player: game.player2, kills: game.player2Kills });
       killsPerPlayer.push({ player: game.player3, kills: game.player3Kills });

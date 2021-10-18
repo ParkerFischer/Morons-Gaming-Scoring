@@ -30,7 +30,7 @@ const [show, setShow] = useState(false)
     parseFloat(registration.member2KD) +
     parseFloat(registration.member3KD) +
     parseFloat(registration.member4KD);
-  const teamHandicap = teamKD <= 5.49 ? 0 : (teamKD - 5.4).toFixed(1) * 10 * 3;
+  const teamHandicap = teamKD <= 5.19 ? 0 : truncate(teamKD - 5.10, 1) * 10 * 3;
 
   const regFormToBePosted = `Start Time: ${registration.startTime}
  Day: ${registration.day}
@@ -42,6 +42,13 @@ const [show, setShow] = useState(false)
  Player 3: ${registration.member3} K/D: ${registration.member3KD} 
  Player 4: ${registration.member4} K/D: ${registration.member4KD} 
 `;
+
+
+function truncate(number, index = 2) {
+  // cutting the number
+  return +number.toString().slice(0, (number.toString().indexOf(".")) + (index + 1));
+}
+
 
   function changeHandler({ target: { name, value } }) {
     setRegistration((prevState) => ({

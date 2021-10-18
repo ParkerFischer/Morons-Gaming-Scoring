@@ -20,9 +20,11 @@ export default function TournamentResultsListed({ tournament }) {
  </div>
  <div className='d-flex justify-content-center text-center row'>
  <p>{tournament.teamWinnerName} | Team K/D: {tournament.WinnerKd} | Score: {tournament.teamWinnerScore}</p>
-<p>Roster: {tournament.winnerPlayer1}, {tournament.winnerPlayer2}, {tournament.winnerPlayer3}, {tournament.winnerPlayer4}</p>
- 
  </div>
+ <div className='d-flex justify-content-center text-center row'>
+<p>Roster: {tournament.winnerPlayer1}, {tournament.winnerPlayer2}, {tournament.winnerPlayer3}, {tournament.winnerPlayer4}</p>
+ </div>
+ 
 
 
  <div className='row d-flex justify-content-center'>

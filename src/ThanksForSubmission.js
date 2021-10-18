@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+
 //for a bad route
 export default function ThanksForSubmission() {
   return (
