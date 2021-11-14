@@ -30,7 +30,7 @@ const [show, setShow] = useState(false)
     parseFloat(registration.member2KD) +
     parseFloat(registration.member3KD) +
     parseFloat(registration.member4KD);
-  const teamHandicap = teamKD <= 3.89 ? 0 : truncate(teamKD - 3.80, 1) * 10 * 3;
+  const teamHandicap = teamKD <= 5.2 ? 0 : truncate(teamKD - 5.10, 1) * 10 * 3;
 
   const regFormToBePosted = `Start Time: ${registration.startTime}
  Day: ${registration.day}
