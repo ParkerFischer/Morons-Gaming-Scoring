@@ -95,7 +95,7 @@ export default function ScoringHeader() {
           onClick={handleClickV}
           disabled={isDisabled}
         >
-          Verdansk '84'
+          Caldera
         </button>
         <div className="col-2"></div>
       </div>
